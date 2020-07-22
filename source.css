@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  background-color: #2e856e;
+  grid-template: auto 1fr;
+}
+
+nav {
+  /* background-color: teal; */
+  margin: 5px 5px;
+}
+
+ul li {
+  padding: 10px 10px 14px 10px;
+  /* display: inline-block; */
+  /* text-decoration: none; */
+}
+
+nav a:hover,
+nav a:link,
+nav a:visited,
+nav a:active {
+  padding: 10px 10px;
+  text-decoration: none;
+  margin-top: 5px;
+  color: white;
+}
+
+nav a:hover {
+  border-bottom: yellowgreen 4px solid;
+  background-color: #226422;
+}
+
+.profile {
+  margin: 5px 5px;
+  border-radius: 100%;
+}
+
+.icon {
+  margin-top: 10px;
+  max-width: 30px;
+  max-height: 19px;
+}
+
+article {
+  margin: 5px 5px;
+}
+
+#biodata,
+#skill {
+  color: white;
+}
+
+#biodata p {
+  margin: 5px 5px;
+}
+
+.left {
+  text-align: center;
+  /* width: 25%; */
+  grid-column: 1 / 2;
+  /* float: left; */
+}
+
+.right {
+  background-color: whitesmoke;
+  grid-column: 2 / 3;
+  /* float: right; */
+  /* width: 75%; */
+}
+
+.right h1 {
+  color: rgb(1, 77, 45);
+  padding-left: 5px;
+}
+
+.right p {
+  padding-left: 15px;
+}
+
+.col-2 {
+  width: 45%;
+  display: inline-block;
+}
+
+a:active,
+a:visited {
+  color: black;
+}
+
+.logo {
+  /* box-shadow: 2px 2px 2px white; */
+  background-color: white;
+  width: max-content;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.academicDiv {
+  padding-left: 1rem;
+  display: grid;
+  grid-template: auto 1fr;
+  grid-template-columns: auto 1fr;
+}
+
+.academicDivComponentLeft {
+  grid-column: 1 / 2;
+}
+
+.academicDivComponentRight {
+  grid-column: 2 / 3;
+}
+
+.text {
+  padding-left: 1rem;
+}
+
+.logoText {
+  margin-bottom: 1rem;
+}
