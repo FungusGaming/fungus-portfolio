@@ -1,3 +1,8 @@
+:root{
+  --green-color: #226422;
+  --background-color: #2e856e;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +10,7 @@
 body {
   display: grid;
   background-color: #2e856e;
-  grid-template: auto 1fr;
+  grid-template-columns: auto 1fr;
 }
 
 nav {
@@ -59,6 +64,8 @@ article {
 }
 
 .left {
+  padding: 5px 10px;
+  background-color: var(--background-color);
   text-align: center;
   /* width: 25%; */
   grid-column: 1 / 2;
@@ -66,6 +73,7 @@ article {
 }
 
 .right {
+  padding: 5px 10px;
   background-color: whitesmoke;
   grid-column: 2 / 4;
   /* float: right; */
