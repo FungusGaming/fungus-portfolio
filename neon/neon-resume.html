@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="neon-resume.css"/>
+    <title>Neon Resume</title>
+</head>
+<body>
+    <div class="flexRow alignCenter spaceBetween">
+        <div id="name" >
+            Fungus
+        </div>
+        <div class="flexRow nav">
+            <div id="home" class="navItem">
+                Home
+            </div>
+            <div id="profile" class="navItem">
+                Profile
+            </div>
+        </div>
+        
+    </div>
+    <div class="flexColumn alignCenter justifyCenter" style="height:calc(100% - 46px);">
+        <div id="gameOn">
+            Game On
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+<script>
+    // const glass = document.getElementById('glass');
+
+    const tl = gsap.timeline({defaults: {ease: "power2.inOut", duration: 1.5}})
+
+    // tl.from('#name', { x: '-10%', opacity: 0})
+    // .from('.navItem', {opacity: 0, delay: .5, duration: 1}, "-=1.5")
+    // .from('.navItem', {x: '-20%', backdropFilter: 'blur(0px)'})
+    // .from('#gameOn', { y: -30, opacity: 0, stagger: .2, duration: .5}, "-=.5")
+</script>

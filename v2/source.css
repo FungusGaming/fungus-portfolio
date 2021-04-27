@@ -1,0 +1,183 @@
+:root{
+  --green-color: #226422;
+  --dark-green-color: #2e856e;
+  --smoke-color: #fafafa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+nav {
+  margin: 5px;
+}
+
+ul li {
+  padding: 10px 10px 14px 10px;
+}
+
+nav a:hover,
+nav a:link,
+nav a:visited,
+nav a:active {
+  padding: 10px 10px;
+  text-decoration: none;
+  margin-top: 5px;
+  color: white;
+}
+
+nav a:hover {
+  border-bottom: yellowgreen 4px solid;
+  background-color: #226422;
+}
+
+.profilePictureDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.profilePicture {
+  margin: 5px 5px;
+  border-radius: 100%;
+  border: 5px solid white;
+  max-width: 100px;
+  max-height: 122px;
+}
+
+.icon {
+  margin: 10px 5px 5px 5px;
+  max-width: 30px;
+  max-height: 19px;
+}
+
+#biodata {
+  padding-top: 70px;
+}
+
+#biodata,
+#skill {
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+}
+
+#skill {
+  margin-top: 30px;
+}
+
+.leftGrid {
+  background-color: var(--smoke-color);
+  position: relative;
+  grid-column: 1 / 2;
+  
+}
+
+.leftGridContent {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+  background-color: var(--dark-green-color);
+}
+
+.rightGrid {
+  padding: 10px 20px;
+  background-color: var(--smoke-color);
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.rightGrid .title {
+  color: rgb(1, 77, 45);
+  padding-left: 2rem;
+}
+
+.rightGrid article {
+  margin-top: 2rem;
+}
+
+.title {
+  font-family: sans-serif;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.col-2 {
+  width: 45%;
+  display: inline-block;
+}
+
+a:active,
+a:visited {
+  color: black;
+}
+
+.logo {
+  /* box-shadow: 2px 2px 2px white; */
+  background-color: white;
+  width: max-content;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.academicDiv {
+  display: grid;
+  grid-template: auto 1fr;
+  grid-template-columns: auto 1fr;
+}
+
+.academicDivComponentLeft {
+  grid-column: 1 / 2;
+  width: 2rem;
+}
+
+.academicDivComponentRight {
+  grid-column: 2 / 3;
+  margin-bottom: 10px;
+}
+
+.text {
+  padding-left: 1rem;
+}
+
+.logoText {
+  margin-bottom: 1rem;
+}
+
+ul li {
+  margin: 0;
+  padding: 5px 5px;
+}
+
+@media only screen and (max-width: 400px) {
+  .rightGrid{
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .leftGrid {
+    grid-column: span 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .rightGrid{
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+}
