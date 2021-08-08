@@ -51,3 +51,21 @@ body {
   background-color: var(--dark-green-color);
   color: var(--white-text);
 }
+
+.projectDiv {
+  padding: 30px;
+  background-color: #fafafa;
+}
+
+.projectTitle {
+  font-size: 5rem;
+  margin: 20px;
+}
+
+.projectCardDiv {
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 20px;
+}
