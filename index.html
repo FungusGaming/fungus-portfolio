@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,70 +7,153 @@
   <link rel="stylesheet" href="source.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.1/svg.min.js" integrity="sha512-Aj0P6wguH3GVlCfbvTyMM90Zq886ePyMEYlZooRfx+3wcSYyUa6Uv4iAjoJ7yiWdKamqQzKp7yr/TkMQ8EEWbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://kit.fontawesome.com/b8a58c97f4.js" crossorigin="anonymous"></script>
   <title>Fungus - Portfolio</title>
 </head>
 
 <body>
   <div class="pageDiv">
-    <div class="profilePictureDiv">
-      <img class="profilePicture" src="icon/selfie-1.jpg" alt="Profile Picture"/>
-    </div>
-    <div class="biodata">
-      <h2>Liew Wei Fung</h2>
-      <div>Fullstack Developer - Malaysian</div>
+    <div class="profileBackgroundDiv"></div>
+    <div class="profileDiv">
+      <div class="profilePictureDiv">
+        <img class="profilePicture" src="icon/selfie-1.jpg" alt="Profile Picture"/>
+      </div>
+      <div class="biodata">
+        <h2>Liew Wei Fung</h2>
+        <div>Fullstack Developer - Malaysian</div>
+      </div>
     </div>
   </div>
 
-  <!-- Experience -->
-  <!-- <div class="pageDiv">
-    <div>Experience</div>
-  </div> -->
-
   <!-- Academic -->
   <div class="pageDiv academicDiv">
-    <div style="position: absolute;width:100%; top:20%; left: 5%;">
-      <div style="font-size: 2rem;">
-        Bachelor degree in Computer Science (Software Development)<spa style="font-size: 1rem;font-style: italic;">- Technical University of Malaysia Melaka</span>
+    <div class="projectTitle">
+      Education
+    </div>
+    <div class="acedmicInformationDiv">
+      <h2>
+        Bachelor degree in Computer Science (Software Development)
+      </h2>
+      <div style="margin-top: 20px;">
+        <div>
+          <i class="fas fa-university"></i>
+          <span>Technical University of Malaysia Melaka (UTeM)</span>
+        </div>
+        <div>
+          <i class="fas fa-calendar-alt"></i>
+          September 2017 - August 2020 
+        </div>
+        <div>
+          <i class="fas fa-percentage"></i>
+          CGPA : 3.75
+        </div>
+      </div> 
+      
+     
+      <div style="margin-top: 20px;">
+        <div>
+          <i class="fas fa-award"></i>
+          Silver in Workshop 2 2018
+        </div>
+        <div>
+          <i class="fas fa-award"></i>
+          Bronze in UTeMEX2019
+        </div>
+        <div>
+          <i class="fas fa-award"></i>
+          W3SCHOOLS Certification Programe: HTML Developer Certificate
+        </div>
       </div>
-      <div style="margin-top:2%;">
-        September 2017 - August 2020 (Latest CGPA : 3.75)
-      </div>
-      <div>
-        Bronze in Workshop 2 2018
-      </div>
-      <div>
-        Bronze in UTeMEX2019
-      </div>
-      <div>
-        W3SCHOOLS Certification Programe: HTML Developer Certificate
-      </div>
-      <svg style="position: absolute;top:100%;margin-top:10%;left:10%;" class="academicDivComponentLeft" width="2000px" height="100%">
+      
+      <svg style="display: none;" class="academicDivComponentLeft academicSVG" width="95%" height="100%">
         <rect x="20" y="20" height="20" width="100%" style="fill: white; stroke-width: 0;" />
         <circle cx="30" cy="30" r="30" stroke-width="0" fill="white" />
-        <circle cx="40%" cy="30" r="30" stroke-width="0" fill="white" />
+        <circle cx="calc(100% - 90px)" cy="30" r="30" stroke-width="0" fill="white" />
+        <circle cx="calc(100% - 30px)" cy="30" r="30" stroke-width="0" fill="white" />
         Sorry, your browser does not support inline SVG.
       </svg>
     </div>
   </div>
 
+  <!-- Experience -->
+  <div class="pageDiv experienceDiv">
+    <div class="projectTitle">Experience</div>
+    <div style="margin: 10% 30px;">
+      <div style="margin-bottom: 30px;">
+        <h2>Application Developer</h2>
+        <h4>EDESK Sdn. Bhd.</h4>
+      </div>
+      <div style="margin-bottom: 20px;color: var(--second-text-color);">1 year* (<span style="font-style: italic;">Oct 2020 - current</span>)</div>
+      <ul>
+        <li>Build .Net web application with Kendo framework for projects and products</li>
+        <li>Involve and contribute in 3 projects with customer statisfaction</li>
+        <li>Produce tools or service to enchance production and workflow</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Project -->
-  <div class="pageDiv projectDiv">
-    <div class="projectTitle">Project</div>
-    <div class="projectCardDiv">
-      <div>Budget (Side Project)</div>
-      <img alt="Project img"/>
-      <div>Save your expenses for better</div>
+  <div class="pageDiv projectDiv flexColumn">
+    <div class="projectTitle">Self Project</div>
+    <div class="flexRow flexOne justifyCenter alignCenter" style="flex-wrap: wrap;">
+      <div class="projectCardDiv">
+        <div class="projectCardTitle">Budget</div>
+        <div class="projectCardSubtitle">(Side Project)</div>
+        <!-- <img alt="Project img"/> -->
+        <div class="projectCardCaption">Save your expenses for better</div>
+        <ul>
+          <li>Record expenses</li>
+          <li>Calculate budget</li>
+          <li>Monthly report</li>
+        </ul>
+      </div>
+      <div class="projectCardDiv middleProjectCard">
+        <div class="projectCardTitle">Service Provider</div>
+        <div class="projectCardSubtitle">(Degree Final Year Project)</div>
+        <!-- <img alt="Project img"/> -->
+        <div class="projectCardCaption">Find best service around you</div>
+        <ul>
+          <li>Google map API</li>
+          <li>Search nearby services</li>
+          <li>Rating feature for the best</li>
+
+        </ul>
+      </div>
+      <div class="projectCardDiv">
+        <div class="projectCardTitle">iRead</div>
+        <div class="projectCardSubtitle">(University Workshop)</div>
+        <!-- <img alt="Project img"/> -->
+        <div class="projectCardCaption">Library System with fingerprint recognition</div>
+        <ul>
+          <li>Fingerprint authentication</li>
+          <li>Enhanced borrow service</li>
+        </ul>
+      </div>
+    </div>    
+  </div>
+
+  <!-- About me-->
+  <div class="pageDiv aboutMeDiv">
+    <div class="projectTitle">About me</div>
+    <div style="margin: 10% 30px">
+      <div style="margin-bottom: 30px;">
+        <div>Gamer who explore in different kind of things. </div>
+        <div>Games, Code, Design. Most important is Fun!</div>
+        <div>Family and friends are important.</div>
+        <div>Coffee no. Tea yeasss.</div>
+      </div>
+      
+      <div style="">
+        <h4>Contact me</h4>
+        <div>fungus0922@gmail.com</div>
+        <div>
+          <a href=""><i class="fab fa-linkedin"></i></a>
+          <a href=""><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      
     </div>
-    <div class="projectCardDiv">
-      <div>Service Provider (Degree Final Year Project)</div>
-      <img alt="Project img"/>
-      <div>Find best service around you</div>
-    </div>
-    <div class="projectCardDiv">
-      <div>iRead (University Workshop)</div>
-      <img alt="Project img"/>
-      <div>Library System with fingerprint recognition</div>
-    </div>
+    
   </div>
   <!-- <img class="icon" src="icon/mail-icon.png" />
         <div>fungus0922@gmail.com</div>

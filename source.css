@@ -3,13 +3,12 @@
   --dark-green-color: #2e856e;
   --smoke-color: #fafafa;
   --white-text: #fcfcfc;
+  --second-text-color: #8a8a8a;
 }
 
-body {
+html, body {
   overflow-x: hidden;
   background-color: var(--smoke-color);
-  width: 100vw;
-  height: 100vh;
 }
 
 * {
@@ -18,17 +17,30 @@ body {
 
 .pageDiv {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.profileBackgroundDiv {
+  position: fixed;
+  height: 60%;
   width: 100%;
+  bottom: 0;
+  background-color: var(--dark-green-color);
+}
+
+.profileDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .profilePictureDiv {
-  position: absolute;
-  z-index: 1;
-  bottom: 30%;
-  left: 0;
-  right: 0;
   text-align: center;
+  width: 100%;
+  z-index: 1;
 }
 
 .profilePicture {
@@ -38,13 +50,14 @@ body {
 }
 
 .biodata {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
+  margin-top: -10%;
   text-align: center;
   width: 100%;
-  background-color: var(--dark-green-color);
   color:var(--white-text);
   padding: 15% 0 5%;
+  z-index: 1;
 }
 
 .academicDiv {
@@ -52,14 +65,30 @@ body {
   color: var(--white-text);
 }
 
-.projectDiv {
+.acedmicInformationDiv {
+  width:100%; 
+  padding-top: 10%; 
+  padding-left: 5%;
+}
+
+.academicSVG {
+  top:100%;margin-top:10%;left:10%;
+}
+
+.experienceDiv ul li {
+  margin-bottom: 8px;
+}
+
+.projectDiv, .experienceDiv, .aboutMeDiv {
   padding: 30px;
   background-color: #fafafa;
 }
 
 .projectTitle {
-  font-size: 5rem;
-  margin: 20px;
+  font-size: calc(2rem + .9vw);
+  padding: 20px;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .projectCardDiv {
@@ -67,5 +96,79 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px;
   background-color: white;
-  margin: 20px;
+  min-width: 400px;
+  margin-top: 30px;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexOne {
+  flex: 1;
+}
+.projectCardDiv {
+  width: 20%;
+  height: 50%;
+}
+
+.middleProjectCard {
+  z-index: 2;
+  height: 70%;
+  background-color: var(--dark-green-color);
+  color: var(--white-text)
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.projectCardTitle {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.projectCardSubtitle {
+  font-size: 0.7rem;
+}
+
+.projectCardCaption {
+  margin: 20px 0;
+}
+
+.projectDiv ul {
+  list-style: none;
+}
+
+.projectDiv ul li:before {
+  content: '✓';
+  margin-right: 10px;
+}
+
+.acedmicInformationDiv i {
+  margin-right: 5px;
+}
+
+@media screen 
+  and (max-device-width: 480px)  {
+    .profilePicture {
+      max-width: 50%;
+    }
+}
+
+@media (min-width: 1200px)
+{
+  .projectTitle {
+    font-size: 5rem;
+  }
 }
