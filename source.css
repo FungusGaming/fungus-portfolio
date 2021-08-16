@@ -65,7 +65,7 @@ html, body {
   color: var(--white-text);
 }
 
-.acedmicInformationDiv {
+.academicInformationDiv {
   width:100%; 
   padding-top: 10%; 
   padding-left: 5%;
@@ -155,8 +155,14 @@ html, body {
   margin-right: 10px;
 }
 
-.acedmicInformationDiv i {
+.academicInformationDiv i {
   margin-right: 5px;
+  width: 16px;
+}
+
+.aboutMeDiv i {
+  font-size: 2rem;
+  margin-right: 15px;
 }
 
 @media screen 
