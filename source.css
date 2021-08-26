@@ -85,7 +85,7 @@ html, body {
 }
 
 .projectTitle {
-  font-size: calc(2rem + .9vw);
+  font-size: calc(4rem + .9vw);
   padding: 20px;
   text-align: center;
   text-decoration: underline;
@@ -146,6 +146,12 @@ html, body {
   margin: 20px 0;
 }
 
+.projectDiv {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
 .projectDiv ul {
   list-style: none;
 }
@@ -165,16 +171,39 @@ html, body {
   margin-right: 15px;
 }
 
-@media screen 
-  and (max-device-width: 480px)  {
-    .profilePicture {
-      max-width: 50%;
-    }
+
+
+@media (max-width: 960px) {
+  .projectDiv {
+    width: 100%;
+    height: 100%;
+  }
+
+  .projectCardDiv {
+    flex: 1 100%;
+  }
 }
 
-@media (min-width: 1200px)
-{
+@media (max-width: 900px)  {
   .projectTitle {
-    font-size: 5rem;
+    font-size: 3rem;
+  }
+  .profilePicture {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 1024px)
+{
+  
+  .projectCardDiv {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 1280px)
+{
+  .projectCardDiv {
+    min-width: 300px;
   }
 }
