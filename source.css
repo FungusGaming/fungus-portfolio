@@ -61,7 +61,7 @@ html, body {
 }
 
 .academicDiv {
-  background-color: var(--dark-green-color);
+  background-color: var(--dark-green-color) !important;
   color: var(--white-text);
 }
 
@@ -79,14 +79,14 @@ html, body {
   margin-bottom: 8px;
 }
 
-.projectDiv, .experienceDiv, .aboutMeDiv {
+.academicDiv, .projectDiv, .experienceDiv, .aboutMeDiv {
   padding: 30px;
   background-color: #fafafa;
 }
 
 .projectTitle {
   font-size: calc(4rem + .9vw);
-  padding: 20px;
+  padding-top: 5%;
   text-align: center;
   text-decoration: underline;
 }
@@ -174,7 +174,10 @@ html, body {
 
 
 @media (max-width: 960px) {
-  .projectDiv {
+  .profileBackgroundDiv {
+    position: absolute;
+  }
+  .projectDiv, .pageDiv {
     width: 100%;
     height: 100%;
   }
