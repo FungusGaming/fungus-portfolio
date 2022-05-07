@@ -11,24 +11,24 @@
 </head>
 
 <body>
-  <section id="profile-section" class="pageDiv">
+  <main class="pageDiv">
     <div class="profileBackgroundDiv"></div>
     <article class="profileDiv">
       <div class="profilePictureDiv">
         <img class="profilePicture" src="icon/selfie-1.jpg" alt="Profile Picture"/>
       </div>
       <div class="biodata">
-        <h2 class="projectTitle"><a href="#profile-section">Liew Wei Fung</a></h2>
-        <p style="margin-top: 20px;font-size:1.5rem">Frontend Developer - Malaysian</p>
+        <h2>Liew Wei Fung</h2>
+        <p>Fullstack Developer - Malaysian</p>
         <p>Moving forward for better</p>
       </div>
     </article>
-  </section>
+  </main>
 
   <!-- Academic -->
-  <section id="education-section" class="pageDiv academicDiv">
+  <section class="pageDiv academicDiv">
     <h3 class="projectTitle">
-      <a href="#education-section">Education</a>
+      Education
     </h3>
     <article class="academicInformationDiv">
       <h2>
@@ -47,7 +47,9 @@
           <i class="fas fa-percentage"></i>
           CGPA : 3.75
         </div>
-      </div>
+      </div> 
+      
+     
       <div style="margin-top: 20px;">
         <div>
           <i class="fas fa-award"></i>
@@ -59,7 +61,7 @@
         </div>
         <div>
           <i class="fas fa-award"></i>
-          W3SCHOOLS Certification Programme: HTML Developer Certificate
+          W3SCHOOLS Certification Programe: HTML Developer Certificate
         </div>
       </div>
       
@@ -74,32 +76,25 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience-section" class="pageDiv experienceDiv">
-    <div class="flexRow">
-      <div id="experience-nav-prev" class="experience-nav-div flexColumn justifyCenter">
-        <span class="fas fa-angle-left"></span>
+  <section class="pageDiv experienceDiv">
+    <h3 class="projectTitle">Experience</h3>
+    <article style="margin: 10% 30px;">
+      <div style="margin-bottom: 30px;">
+        <h2>Application Developer</h2>
+        <h4>EDESK Sdn. Bhd.</h4>
       </div>
-      <div class="flexOne">
-        <h3 class="projectTitle"><a href="#experience-section">Experience</a></h3>
-        <article id="experience-article" class="experienceArticle">
-          <div style="margin-bottom: 30px;">
-            <h2 id="experience-title"></h2>
-            <h4 id=""><a id="experience-company"></a></h4>
-          </div>
-          <div class="second-text" style="margin-bottom: 20px;"><span id="experience-time"></span> (<i id="experience-duration"></i>)</div>
-          <ul id="experience-description">
-          </ul>
-        </article>
-      </div>
-      <div id="experience-nav-next" class="experience-nav-div flexColumn justifyCenter">
-        <span class="fas fa-angle-right"></span>
-      </div>
-    </div>
+      <div style="margin-bottom: 20px;color: var(--second-text-color);">1 year* (<span style="font-style: italic;">Oct 2020 - current</span>)</div>
+      <ul>
+        <li>Build .Net web application with Kendo framework for projects and products</li>
+        <li>Involve and contribute in 3 projects with customer statisfaction</li>
+        <li>Produce tools or service to enchance production and workflow</li>
+      </ul>
+    </article>
   </section>
 
   <!-- Project -->
-  <section id="project-section" class="projectDiv flexColumn">
-    <h3 class="projectTitle"><a href="#project-section">Project</a></h3>
+  <section class="projectDiv flexColumn">
+    <h3 class="projectTitle">Project</h3>
     <div class="flexRow flexOne justifyCenter alignCenter" style="flex-wrap: wrap;">
       <article class="projectCardDiv">
         <div class="projectCardTitle">Budget</div>
@@ -107,8 +102,8 @@
         <!-- <img alt="Project img"/> -->
         <div class="projectCardCaption">Save your expenses for better</div>
         <ul>
-          <li>Ionic React (PWA)</li>
           <li>Record expenses</li>
+          <li>Calculate budget</li>
           <li>Monthly report</li>
         </ul>
       </article>
@@ -118,9 +113,10 @@
         <!-- <img alt="Project img"/> -->
         <div class="projectCardCaption">Find best service around you</div>
         <ul>
-          <li>Google map API service</li>
-          <li>Search nearby services using Geo-location</li>
-          <li>Rating feature for the best service</li>
+          <li>Google map API</li>
+          <li>Search nearby services</li>
+          <li>Rating feature for the best</li>
+
         </ul>
       </article>
       <article class="projectCardDiv">
@@ -130,16 +126,15 @@
         <div class="projectCardCaption">Library System with fingerprint recognition</div>
         <ul>
           <li>Fingerprint authentication</li>
-          <li>Enhanced borrow book service</li>
-          <li>Modern UI web design with bootstrap</li>
+          <li>Enhanced borrow service</li>
         </ul>
       </article>
     </div>    
   </section>
 
   <!-- About me-->
-  <section id="about-me-section" class="pageDiv aboutMeDiv">
-    <h3 class="projectTitle"><a href="#about-me-section">About me</a></h3>
+  <section class="pageDiv aboutMeDiv">
+    <h3 class="projectTitle">About me</h3>
     <article style="margin: 10% 30px">
       <div style="margin-bottom: 30px;">
         <div>Gamer who explore in different kind of things. </div>
@@ -152,7 +147,7 @@
         <h4>Contact me</h4>
         <div class="flexRow alignCenter">
           <a target="_blank" href="https://www.linkedin.com/in/liew-wei-fung-69a91719a/"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:fungus0922@gmail.com">fungus0922@gmail.com </a>
+          <span>fungus0922@gmail.com </span>
         </div>
         <div style="margin-top: 10px;">
         </div>
@@ -161,49 +156,5 @@
   </section>
 </body>
 </html>
-<script type="text/javascript">
-  let experienceIndent = 0
-  let data = {}
-  loadJSON = (filepath) => {
-    return new Promise((resolve, reject) => {
-      var xobj = new XMLHttpRequest();
-      xobj.overrideMimeType("application/json");
-      xobj.open('GET', filepath, true);
-      xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-          // .open will NOT return a value but simply returns undefined in async mode so use a callback
-          resolve(JSON.parse(xobj.responseText));
-        }
-      }
-      xobj.send(null);
-    })
-  }
-
-  loadExperience = async (indent) => {
-    const experienceDescription = document.getElementById("experience-description")
-    data = await loadJSON('data/data.json')
-    const experience = data.experience
-    Object.keys(experience[indent].content).forEach((key) => {
-      if(key !== 'description') document.getElementById("experience-" + key).innerText = experience[indent]['content'][key]
-    })
-    document.getElementById('experience-company').setAttribute('href', experience[indent].companyLink)
-    experience[indent].companyLink === '#experience-section' ? document.getElementById('experience-company').setAttribute('target', '_self') : document.getElementById('experience-company').setAttribute('target', '_blank')
-    experienceDescription.innerHTML = ''
-    experience[indent].description.forEach((d) => {
-      let li = document.createElement('li')
-      li.innerText = d
-      experienceDescription.appendChild(li)
-    })
-  }
-
-  document.getElementById("experience-nav-next").addEventListener("click", (e) => {
-    if(experienceIndent !== data.experience.length - 1) experienceIndent++;
-    loadExperience(experienceIndent)
-  })
-  document.getElementById("experience-nav-prev").addEventListener("click", (e) => {
-    if(experienceIndent !== 0) experienceIndent--;
-    loadExperience(experienceIndent)
-  })
-  
-  loadExperience(experienceIndent)
+<script>
 </script>

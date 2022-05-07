@@ -80,13 +80,12 @@ html, body {
 }
 
 .academicDiv, .projectDiv, .experienceDiv, .aboutMeDiv {
-  padding: 30px;
+  padding: 6% 30px 30px;
   background-color: #fafafa;
 }
 
 .projectTitle {
   font-size: calc(4rem + .9vw);
-  padding-top: 5%;
   text-align: center;
   text-decoration: underline;
 }
@@ -171,7 +170,27 @@ html, body {
   margin-right: 15px;
 }
 
+@media (max-width: 1280px)
+{
+  .projectCardDiv {
+    min-width: 300px;
+  }
+  
+  .profilePicture {
+    max-width: 30%;
+  }
+}
 
+@media (max-width: 1024px)
+{
+  .projectCardDiv {
+    min-width: 300px;
+  }
+
+  .profilePicture {
+    max-width: 50%;
+  }
+}
 
 @media (max-width: 960px) {
   .profileBackgroundDiv {
@@ -180,6 +199,10 @@ html, body {
   .projectDiv, .pageDiv {
     width: 100%;
     height: 100%;
+  }
+
+  .experienceDiv {
+    padding: 30px 0;
   }
 
   .projectCardDiv {
@@ -193,20 +216,26 @@ html, body {
   }
   .profilePicture {
     max-width: 50%;
+    border-width: 10px;
   }
 }
 
-@media (max-width: 1024px)
-{
-  
-  .projectCardDiv {
-    min-width: 300px;
-  }
+.experienceArticle {
+  margin: 10% 0px;
 }
 
-@media (max-width: 1280px)
-{
-  .projectCardDiv {
-    min-width: 300px;
-  }
+/* text-color */
+.second-text {
+  color: var(--second-text-color);
+}
+
+.experience-nav-div .fas {
+  padding: 15px;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.projectTitle a, .projectTitle a:active, .projectTitle a:visited, .projectTitle a:focus, .projectTitle a:hover {
+  color: inherit;
 }

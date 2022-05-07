@@ -1,0 +1,32 @@
+{
+  "experience": [
+    {
+      "content": {
+        "title": "Software Engineer II",
+        "company": "Kaodim Sdn. Bhd.",
+        "time": "4 months",
+        "duration": "Jan 2020 - current"
+      },
+      "description": [
+        "Translated design (UI/UX) wireframes into high quality code",
+        "Best practiced for full SDLC of web development",
+        "Optimzed of frontend performance to deliver scalable, smooth, blazing-fast web pages"
+      ],
+      "companyLink": "https://www.kaodim.com/"
+    },
+    {
+      "content": {
+        "title": "Application Developer",
+        "company": "EDESK Sdn. Bhd.",
+        "time": "1 year 3 months",
+        "duration": "Oct 2020 - Dec 2021"
+      },
+      "description": [
+        "Built .Net web application with Kendo framework for projects and products",
+        "Contributed in 3 projects with customer statisfaction",
+        "Implemented tools and services to enchance production and workflow"
+      ],
+      "companyLink": "https://www.edesk.com.my/"
+    }
+  ]
+}
