@@ -5,7 +5,7 @@
         "title": "Software Engineer II",
         "company": "Kaodim Sdn. Bhd.",
         "time": "4 months",
-        "duration": "Jan 2020 - current"
+        "duration": "Jan 2022 - current"
       },
       "description": [
         "Translated design (UI/UX) wireframes into high quality code",
@@ -23,10 +23,24 @@
       },
       "description": [
         "Built .Net web application with Kendo framework for projects and products",
-        "Contributed in 3 projects with customer statisfaction",
+        "Contributed in software projects with customer statisfaction",
         "Implemented tools and services to enchance production and workflow"
       ],
       "companyLink": "https://www.edesk.com.my/"
+    },
+    {
+      "content": {
+        "title": "Fullstack Developer (Intern)",
+        "company": "Efichain Solution Sdn. Bhd.",
+        "time": "6 months",
+        "duration": "Feb 2020 - Jul 2020"
+      },
+      "description": [
+        "Researched and developed mobile applications with latest technology framework",
+        "Involved Ionic, React Native and Framework7 development",
+        "Implemented better solution with findings and testings"
+      ],
+      "companyLink": "https://www.efichain.com/"
     }
   ]
 }
