@@ -194,6 +194,18 @@
       li.innerText = d
       experienceDescription.appendChild(li)
     })
+
+    hideNav(indent, experience.length)
+  }
+
+  hideNav = (indent, length) => {
+    document.getElementById("experience-nav-prev").style.visibility = "visible"
+    document.getElementById("experience-nav-next").style.visibility = "visible"
+    if(indent === 0) {
+      document.getElementById("experience-nav-prev").style.visibility = "hidden"
+    } else if (indent === length - 1) {
+      document.getElementById("experience-nav-next").style.visibility = "hidden"
+    }
   }
 
   document.getElementById("experience-nav-next").addEventListener("click", (e) => {
