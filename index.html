@@ -202,6 +202,9 @@
     Object.keys(experience[indent].content).forEach((key) => {
       if(key !== 'description') document.getElementById("experience-" + key).innerText = experience[indent]['content'][key]
     })
+    const dateFrom = new Date(experience[indent]['from']);
+    const dateTo = experience[indent]['to'] ? new Date(experience[indent]['to']) : new Date() ;
+    document.querySelector('#experience-time').innerText = timeSince(dateFrom, dateTo)
     document.getElementById('experience-company').setAttribute('href', experience[indent].companyLink)
     experience[indent].companyLink === '#experience-section' ? document.getElementById('experience-company').setAttribute('target', '_self') : document.getElementById('experience-company').setAttribute('target', '_blank')
     experienceDescription.innerHTML = ''
@@ -234,4 +237,21 @@
   })
   
   loadExperience(experienceIndent)
+
+  function timeSince(dateFrom, dateTo) {
+    const seconds = Math.floor((dateTo - dateFrom) / 1000);
+
+    let interval = seconds / 31536000;
+    let modulus = seconds % 31536000;
+    let tmp = ""
+    if (interval > 1) {
+      tmp += Math.floor(interval) + " years";
+    }
+    interval = modulus / 2592000;
+    if (interval > 1) {
+      if(tmp != "") tmp += " ";
+      tmp += Math.floor(interval) + " months";
+    }
+    return tmp
+  }
 </script>
