@@ -178,6 +178,11 @@ html, body {
 {
   .project-card-div {
     min-width: 300px;
+    height: 60%;
+  }
+
+  .project-card-div:nth-child(2){
+    height: 80%;
   }
   
   .profile-picture {
@@ -242,4 +247,8 @@ html, body {
 
 .project-title a, .project-title a:active, .project-title a:visited, .project-title a:focus, .project-title a:hover {
   color: inherit;
+}
+
+ol, ul {
+  padding-left: 1rem;
 }
