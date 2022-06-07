@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/source.css" />
+  <title>3D portfolio</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <div class="product-card">
+    <model-viewer id="product-model" class="product-model-viewer" alt="Fungus Donut" src="assets/donut.gltf" ar
+      ar-modes="webxr scene-viewer quick-look" environment-image="" poster="" seamless-poster shadow-intensity="1"
+      enable-pan camera-target="0  0 0.05m"
+      camera-orbit="" orientation="10deg 10deg 10deg">
+    </model-viewer>
+    <div class="product-model-blank"></div>
+    <div class="description">
+      <h1>Strawberry donut</h1>
+    </div>
+  </div>
+</body>
+<script src="assets/function.js"></script>
+</html>
