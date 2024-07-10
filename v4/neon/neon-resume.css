@@ -1,0 +1,99 @@
+:root {
+	--neon-blue: #03e9f4;
+	--neon-purple: #ed0cef;
+	--neon-yellow: #f1fa3c;
+	--neon-pink: #ea2c62;
+	--neon-green: #00ff45;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto';
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	background: #0f0801;
+	padding: 2%;
+}
+
+.flexOne {
+	flex: 1;
+}
+
+.flexRow{
+	display: flex;
+	flex-direction: row;
+}
+
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
+.justifyEnd {
+	justify-content: flex-end;
+}
+
+.alignEnd {
+	align-items: flex-end;
+}
+
+.spaceBetween {
+	justify-content: space-between;
+}
+
+@font-face {
+	font-family: 'BungeeHairline';
+	src: url('Bungee_Hairline/BungeeHairline-Regular.ttf');
+}
+.nav {
+	--neon-timer-color: var(--neon-blue);
+	color: black;
+	font-size: 30px;
+	text-shadow: -1px 0px 0 var(--neon-timer-color), 1px 0px 0 var(--neon-timer-color), 0px 1px 0 var(--neon-timer-color), 0px -1px 0 var(--neon-timer-color);
+}
+
+.nav div{
+	font-family: 'BungeeHairline';
+	padding: 5px 10px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+#name {
+	--neon-timer-color: var(--neon-yellow);
+	color: black;
+	letter-spacing: 3px;
+	font-size: 40px;
+	text-shadow: -1px 0px 0 var(--neon-timer-color), 1px 0px 0 var(--neon-timer-color), 0px 1px 0 var(--neon-timer-color), 0px -1px 0 var(--neon-timer-color);
+	/* background: linear-gradient(90deg, transparent, var(--neon-timer-color)); */
+}
+
+#gameOn {
+	cursor: pointer;
+	--neon-timer-color: var(--neon-green);
+	color: black;
+	letter-spacing: 3px;
+	font-size: 64px;
+	text-shadow: -1px 0px 0 var(--neon-timer-color), 1px 0px 0 var(--neon-timer-color), 0px 1px 0 var(--neon-timer-color), 0px -1px 0 var(--neon-timer-color),
+	-2px -2px 10px var(--neon-timer-color), 2px -2px 10px var(--neon-timer-color), -2px 2px 10px var(--neon-timer-color), 2px 2px 10px var(--neon-timer-color);
+}
+
+#gameOn:hover {
+	text-shadow: -1px 0px 0 var(--neon-timer-color), 1px 0px 0 var(--neon-timer-color), 0px 1px 0 var(--neon-timer-color), 0px -1px 0 var(--neon-timer-color),
+	-2px -2px 10px var(--neon-timer-color), 2px -2px 10px var(--neon-timer-color), -2px 2px 10px var(--neon-timer-color), 2px 2px 10px var(--neon-timer-color),
+	-2px -2px 20px var(--neon-timer-color), 2px -2px 20px var(--neon-timer-color), -2px 2px 20px var(--neon-timer-color), 2px 2px 20px var(--neon-timer-color);
+
+}

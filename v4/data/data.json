@@ -1,0 +1,49 @@
+{
+  "experience": [
+    {
+      "content": {
+        "title": "Software Engineer II",
+        "company": "Kaodim Sdn. Bhd.",
+        "duration": "Jan 2022 - current"
+      },
+      "description": [
+        "Translated design (UI/UX) wireframes into high quality code",
+        "Best practiced for full SDLC of web development",
+        "Optimzed of frontend performance to deliver scalable, smooth, blazing-fast web pages"
+      ],
+      "companyLink": "https://www.kaodim.com/",
+      "from": "2022-01-03",
+      "to": ""
+    },
+    {
+      "content": {
+        "title": "Application Developer",
+        "company": "EDESK Sdn. Bhd.",
+        "duration": "Oct 2020 - Dec 2021"
+      },
+      "description": [
+        "Built .Net web application with Kendo framework for projects and products",
+        "Contributed in software projects with customer statisfaction",
+        "Implemented tools and services to enchance production and workflow"
+      ],
+      "companyLink": "https://www.edesk.com.my/",
+      "from": "2020-10-01",
+      "to": "2021-12-31"
+    },
+    {
+      "content": {
+        "title": "Fullstack Developer (Intern)",
+        "company": "Efichain Solution Sdn. Bhd.",
+        "duration": "Feb 2020 - Jul 2020"
+      },
+      "description": [
+        "Researched and developed mobile applications with latest technology framework",
+        "Involved Ionic, React Native and Framework7 development",
+        "Implemented better solution with findings and testings"
+      ],
+      "companyLink": "https://www.efichain.com/",
+      "from": "2020-02-01",
+      "to": "2020-07-31"
+    }
+  ]
+}

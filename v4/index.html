@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="source.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/b8a58c97f4.js" crossorigin="anonymous"></script>
+  <title>Fungus - Portfolio</title>
+</head>
+
+<body>
+  <section id="profile-section" class="page-div">
+    <div class="profile-background-div"></div>
+    <article class="profile-div">
+      <div class="profile-picture-div">
+        <img class="profile-picture" src="icon/selfie-1.jpg" alt="Profile Picture"/>
+      </div>
+      <div class="biodata">
+        <h2 class="project-title"><a href="#profile-section">Liew Wei Fung</a></h2>
+        <p style="margin-top: 20px;font-size:1.5rem">Frontend Developer - Malaysian</p>
+        <p>Moving forward for better</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Academic -->
+  <section id="education-section" class="page-div academic-div">
+    <h3 class="project-title">
+      <a href="#education-section">Education</a>
+    </h3>
+    <article class="academic-information-div">
+      <h2>
+        Bachelor Degree in Computer Science (Software Development)
+      </h2>
+      <div style="margin-top: 20px;">
+        <div>
+          <i class="fas fa-university"></i>
+          <span>Technical University of Malaysia Melaka (UTeM)</span>
+        </div>
+        <div>
+          <i class="fas fa-calendar-alt"></i>
+          September 2017 - August 2020 
+        </div>
+        <div>
+          <i class="fas fa-percentage"></i>
+          CGPA : 3.75
+        </div>
+      </div>
+      <div style="margin-top: 20px;">
+        <div>
+          <i class="fas fa-award"></i>
+          Silver in Workshop 2 2018
+        </div>
+        <div>
+          <i class="fas fa-award"></i>
+          Bronze in UTeMEX2019
+        </div>
+        <div>
+          <i class="fas fa-award"></i>
+          W3SCHOOLS Certification Programme: HTML Developer Certificate
+        </div>
+      </div>
+      
+      <svg style="display: none;" class="academic-divComponentLeft academic-svg" width="95%" height="100%">
+        <rect x="20" y="20" height="20" width="100%" style="fill: white; stroke-width: 0;" />
+        <circle cx="30" cy="30" r="30" stroke-width="0" fill="white" />
+        <circle cx="calc(100% - 90px)" cy="30" r="30" stroke-width="0" fill="white" />
+        <circle cx="calc(100% - 30px)" cy="30" r="30" stroke-width="0" fill="white" />
+        Sorry, your browser does not support inline SVG.
+      </svg>
+    </article>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience-section" class="page-div experience-div">
+    <div class="flex-row">
+      <div id="experience-nav-prev" class="experience-nav-div flex-column justify-center">
+        <span class="fas fa-angle-left"></span>
+      </div>
+      <div class="flex-one">
+        <h3 class="project-title"><a href="#experience-section">Experience</a></h3>
+        <article id="experience-article" class="experienceArticle">
+          <div style="margin-bottom: 30px;">
+            <h2 id="experience-title"></h2>
+            <h4 id=""><a id="experience-company"></a></h4>
+          </div>
+          <div class="second-text" style="margin-bottom: 20px;"><span id="experience-time"></span> (<i id="experience-duration"></i>)</div>
+          <ul id="experience-description">
+          </ul>
+        </article>
+      </div>
+      <div id="experience-nav-next" class="experience-nav-div flex-column justify-center">
+        <span class="fas fa-angle-right"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project -->
+  <section id="project-section" class="project-div flex-column">
+    <h3 class="project-title"><a href="#project-section">Project</a></h3>
+    <div class="flex-row flex-one justify-center align-center" style="flex-wrap: wrap;">
+      <article class="project-card-div">
+        <div class="project-card-title flex-row space-between">
+          <a target="_blank" rel="noopener noreferrer" href="https://budget-fung-public.web.app">
+            Budget
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/FungusGaming">
+            <i class="fab fa-github-square"></i>
+          </a>
+        </div>
+        <div class="project-card-subtitle">
+          <span>(Side Project)</span>
+        </div>
+        <!-- <img alt="Project img"/> -->
+        <div class="project-card-caption">Save your expenses for better</div>
+        <ul>
+          <li>Ionic React (PWA)</li>
+          <li>Record expenses</li>
+          <li>Current month view</li>
+        </ul>
+      </article>
+      <article class="project-card-div">
+        <div class="project-card-title">Service Provider</div>
+        <div class="project-card-subtitle">(University Final Year Project)</div>
+        <!-- <img alt="Project img"/> -->
+        <div class="project-card-caption">Find best service around you</div>
+        <ul>
+          <li>Google map API service</li>
+          <li>Search nearby services using Geo-location</li>
+          <li>Rating feature for the best service</li>
+        </ul>
+      </article>
+      <article class="project-card-div">
+        <div class="project-card-title">iRead</div>
+        <div class="project-card-subtitle">(University Workshop)</div>
+        <!-- <img alt="Project img"/> -->
+        <div class="project-card-caption">Library System with fingerprint recognition</div>
+        <ul>
+          <li>Fingerprint authentication</li>
+          <li>Enhanced borrow book service</li>
+          <li>Modern UI web design with bootstrap</li>
+        </ul>
+      </article>
+    </div>    
+  </section>
+
+  <!-- About me-->
+  <section id="about-me-section" class="page-div about-me-div">
+    <h3 class="project-title"><a href="#about-me-section">About me</a></h3>
+    <article style="margin: 10% 30px">
+      <div style="margin-bottom: 30px;">
+        <div>Gamer who explore in different kind of things. </div>
+        <div>Games, Code, Design. Most important is Fun!</div>
+        <div>Family and friends are important.</div>
+        <div>Coffee no. Tea yeasss.</div>
+      </div>
+      
+      <div>
+        <h4>Contact me</h4>
+        <div class="flex-row align-center">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/liew-wei-fung-69a91719a/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:fungus0922@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/FungusGaming">
+            <i class="fab fa-github-square"></i>
+          </a>
+        </div>
+        <div style="margin-top: 10px;">
+        </div>
+      </div>
+    </article>
+  </section>
+</body>
+</html>
+<script type="text/javascript">
+  let experienceIndent = 0
+  let data = {}
+  loadJSON = (filepath) => {
+    return new Promise((resolve, reject) => {
+      var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+      xobj.open('GET', filepath, true);
+      xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          // .open will NOT return a value but simply returns undefined in async mode so use a callback
+          resolve(JSON.parse(xobj.responseText));
+        }
+      }
+      xobj.send(null);
+    })
+  }
+
+  loadExperience = async (indent) => {
+    const experienceDescription = document.getElementById("experience-description")
+    data = await loadJSON('data/data.json')
+    const experience = data.experience
+    Object.keys(experience[indent].content).forEach((key) => {
+      if(key !== 'description') document.getElementById("experience-" + key).innerText = experience[indent]['content'][key]
+    })
+    const dateFrom = new Date(experience[indent]['from']);
+    const dateTo = experience[indent]['to'] ? new Date(experience[indent]['to']) : new Date() ;
+    document.querySelector('#experience-time').innerText = timeSince(dateFrom, dateTo)
+    document.getElementById('experience-company').setAttribute('href', experience[indent].companyLink)
+    experience[indent].companyLink === '#experience-section' ? document.getElementById('experience-company').setAttribute('target', '_self') : document.getElementById('experience-company').setAttribute('target', '_blank')
+    experienceDescription.innerHTML = ''
+    experience[indent].description.forEach((d) => {
+      let li = document.createElement('li')
+      li.innerText = d
+      experienceDescription.appendChild(li)
+    })
+
+    hideNav(indent, experience.length)
+  }
+
+  hideNav = (indent, length) => {
+    document.getElementById("experience-nav-prev").style.visibility = "visible"
+    document.getElementById("experience-nav-next").style.visibility = "visible"
+    if(indent === 0) {
+      document.getElementById("experience-nav-prev").style.visibility = "hidden"
+    } else if (indent === length - 1) {
+      document.getElementById("experience-nav-next").style.visibility = "hidden"
+    }
+  }
+
+  document.getElementById("experience-nav-next").addEventListener("click", (e) => {
+    if(experienceIndent !== data.experience.length - 1) experienceIndent++;
+    loadExperience(experienceIndent)
+  })
+  document.getElementById("experience-nav-prev").addEventListener("click", (e) => {
+    if(experienceIndent !== 0) experienceIndent--;
+    loadExperience(experienceIndent)
+  })
+  
+  loadExperience(experienceIndent)
+
+  function timeSince(dateFrom, dateTo) {
+    const seconds = Math.floor((dateTo - dateFrom) / 1000);
+
+    let interval = seconds / 31536000;
+    let modulus = seconds % 31536000;
+    let tmp = ""
+    if (interval > 1) {
+      tmp += Math.floor(interval) + " years";
+    }
+    interval = modulus / 2592000;
+    if (interval > 1) {
+      if(tmp != "") tmp += " ";
+      tmp += Math.floor(interval) + " months";
+    }
+    return tmp
+  }
+</script>
