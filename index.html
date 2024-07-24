@@ -7,10 +7,27 @@
   <link rel="stylesheet" href="source.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/b8a58c97f4.js" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Fungus - Portfolio</title>
 </head>
 
 <body>
+  <section id="navbar-section" class="page-div flex-row space-between">
+    <div>
+      <h2>Fungus</h2>
+    </div>
+    <nav>
+      <a>Experience</a>
+      <a>Project</a>
+      <a>More</a>
+    </nav>
+  </section>
+  <section id="donut-section">
+    <model-viewer id="donut-model-viewer" alt="Fungus Donut" src="assets/donut.gltf" ar
+      ar-modes="webxr scene-viewer quick-look" environment-image="" poster="" seamless-poster shadow-intensity="1"
+      enable-pan camera-orbit="0deg 65deg 105%"></model-viewer>
+  </section>
   <section id="profile-section" class="page-div">
     <div class="profile-background-div"></div>
     <article class="profile-div">
@@ -19,57 +36,9 @@
       </div>
       <div class="biodata">
         <h2 class="project-title"><a href="#profile-section">Liew Wei Fung</a></h2>
-        <p style="margin-top: 20px;font-size:1.5rem">Frontend Developer - Malaysian</p>
-        <p>Moving forward for better</p>
+        <p id="position">Frontend Developer - Malaysian</p>
+        <p id="slogan">Moving forward for better</p>
       </div>
-    </article>
-  </section>
-
-  <!-- Academic -->
-  <section id="education-section" class="page-div academic-div">
-    <h3 class="project-title">
-      <a href="#education-section">Education</a>
-    </h3>
-    <article class="academic-information-div">
-      <h2>
-        Bachelor Degree in Computer Science (Software Development)
-      </h2>
-      <div style="margin-top: 20px;">
-        <div>
-          <i class="fas fa-university"></i>
-          <span>Technical University of Malaysia Melaka (UTeM)</span>
-        </div>
-        <div>
-          <i class="fas fa-calendar-alt"></i>
-          September 2017 - August 2020 
-        </div>
-        <div>
-          <i class="fas fa-percentage"></i>
-          CGPA : 3.75
-        </div>
-      </div>
-      <div style="margin-top: 20px;">
-        <div>
-          <i class="fas fa-award"></i>
-          Silver in Workshop 2 2018
-        </div>
-        <div>
-          <i class="fas fa-award"></i>
-          Bronze in UTeMEX2019
-        </div>
-        <div>
-          <i class="fas fa-award"></i>
-          W3SCHOOLS Certification Programme: HTML Developer Certificate
-        </div>
-      </div>
-      
-      <svg style="display: none;" class="academic-divComponentLeft academic-svg" width="95%" height="100%">
-        <rect x="20" y="20" height="20" width="100%" style="fill: white; stroke-width: 0;" />
-        <circle cx="30" cy="30" r="30" stroke-width="0" fill="white" />
-        <circle cx="calc(100% - 90px)" cy="30" r="30" stroke-width="0" fill="white" />
-        <circle cx="calc(100% - 30px)" cy="30" r="30" stroke-width="0" fill="white" />
-        Sorry, your browser does not support inline SVG.
-      </svg>
     </article>
   </section>
 
@@ -80,7 +49,7 @@
         <span class="fas fa-angle-left"></span>
       </div>
       <div class="flex-one">
-        <h3 class="project-title"><a href="#experience-section">Experience</a></h3>
+        <h3 class="project-title"><a href="#experience-section">Timeline</a></h3>
         <article id="experience-article" class="experienceArticle">
           <div style="margin-bottom: 30px;">
             <h2 id="experience-title"></h2>
@@ -97,6 +66,56 @@
     </div>
   </section>
 
+  <!-- Academic -->
+  <section id="education-section" class="page-div academic-div">
+    <h3 class="project-title">
+      <a href="#education-section">Education</a>
+    </h3>
+    <article class="academic-information-div">
+      <h2>
+        Bachelor Degree in Computer Science (Software Development)
+      </h2>
+      <div style="margin-top: 20px;">
+        <p>
+          <i class="fas fa-university"></i>
+          <span>Technical University of Malaysia Melaka (UTeM)</span>
+        </p>
+        <p>
+          <i class="fas fa-calendar-alt"></i>
+          September 2017 - August 2020 
+        </p>
+        <p>
+          <i class="fas fa-percentage"></i>
+          CGPA : 3.75
+        </p>
+      </div>
+      <div style="margin-top: 20px;">
+        <p>
+          <i class="fas fa-award"></i>
+          Silver in Workshop 2 2018
+        </p>
+        <p>
+          <i class="fas fa-award"></i>
+          Bronze in UTeMEX2019
+        </p>
+        <p>
+          <i class="fas fa-award"></i>
+          W3SCHOOLS Certification Programme: HTML Developer Certificate
+        </p>
+      </div>
+      
+      <svg style="display: none;" class="academic-divComponentLeft academic-svg" width="95%" height="100%">
+        <rect x="20" y="20" height="20" width="100%" style="fill: white; stroke-width: 0;" />
+        <circle cx="30" cy="30" r="30" stroke-width="0" fill="white" />
+        <circle cx="calc(100% - 90px)" cy="30" r="30" stroke-width="0" fill="white" />
+        <circle cx="calc(100% - 30px)" cy="30" r="30" stroke-width="0" fill="white" />
+        Sorry, your browser does not support inline SVG.
+      </svg>
+    </article>
+  </section>
+
+
+
   <!-- Project -->
   <section id="project-section" class="project-div flex-column">
     <h3 class="project-title"><a href="#project-section">Project</a></h3>
@@ -110,11 +129,11 @@
             <i class="fab fa-github-square"></i>
           </a>
         </div>
-        <div class="project-card-subtitle">
+        <p class="project-card-subtitle">
           <span>(Side Project)</span>
-        </div>
+        </p>
         <!-- <img alt="Project img"/> -->
-        <div class="project-card-caption">Save your expenses for better</div>
+        <p class="project-card-caption">Save your expenses for better</p>
         <ul>
           <li>Ionic React (PWA)</li>
           <li>Record expenses</li>
@@ -122,10 +141,10 @@
         </ul>
       </article>
       <article class="project-card-div">
-        <div class="project-card-title">Service Provider</div>
-        <div class="project-card-subtitle">(University Final Year Project)</div>
+        <p class="project-card-title">Service Provider</p>
+        <p class="project-card-subtitle">(University Final Year Project)</p>
         <!-- <img alt="Project img"/> -->
-        <div class="project-card-caption">Find best service around you</div>
+        <p class="project-card-caption">Find best service around you</p>
         <ul>
           <li>Google map API service</li>
           <li>Search nearby services using Geo-location</li>
@@ -133,10 +152,10 @@
         </ul>
       </article>
       <article class="project-card-div">
-        <div class="project-card-title">iRead</div>
-        <div class="project-card-subtitle">(University Workshop)</div>
+        <p class="project-card-title">iRead</p>
+        <p class="project-card-subtitle">(University Workshop)</p>
         <!-- <img alt="Project img"/> -->
-        <div class="project-card-caption">Library System with fingerprint recognition</div>
+        <p class="project-card-caption">Library System with fingerprint recognition</p>
         <ul>
           <li>Fingerprint authentication</li>
           <li>Enhanced borrow book service</li>
@@ -151,10 +170,10 @@
     <h3 class="project-title"><a href="#about-me-section">About me</a></h3>
     <article style="margin: 10% 30px">
       <div style="margin-bottom: 30px;">
-        <div>Gamer who explore in different kind of things. </div>
-        <div>Games, Code, Design. Most important is Fun!</div>
-        <div>Family and friends are important.</div>
-        <div>Coffee no. Tea yeasss.</div>
+        <p>Gamer who explore in different kind of things. </p>
+        <p>Games, Code, Design. Most important is Fun!</p>
+        <p>Family and friends are important.</p>
+        <p>Coffee no. Tea yeasss.</p>
       </div>
       
       <div>
@@ -210,7 +229,9 @@
     experienceDescription.innerHTML = ''
     experience[indent].description.forEach((d) => {
       let li = document.createElement('li')
-      li.innerText = d
+      let p = document.createElement('p')
+      p.innerText = d
+      li.appendChild(p);
       experienceDescription.appendChild(li)
     })
 

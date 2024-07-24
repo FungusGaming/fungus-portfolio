@@ -56,7 +56,7 @@ body {
 
 @font-face {
 	font-family: 'BungeeHairline';
-	src: url('Bungee_Hairline/BungeeHairline-Regular.ttf');
+	src: url('assets/Bungee_Hairline/BungeeHairline-Regular.ttf');
 }
 .nav {
 	--neon-timer-color: var(--neon-blue);
