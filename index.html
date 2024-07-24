@@ -275,4 +275,60 @@
     }
     return tmp
   }
+
+  // modern Chrome requires { passive: false } when adding event
+  var supportsPassive = false;
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function () { supportsPassive = true; } 
+    }));
+  } catch(e) {}
+  let scrollCount = 0;
+  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+  let scrollTimeout;
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+  window.addEventListener(wheelEvent, function(e) {
+    e.preventDefault();
+    console.log('e:', e)
+    if (e.deltaY < 0 && scrollCount > 50) {
+      scrollCount -= 58;
+    } else {
+      scrollCount += 58;
+    }
+
+    if (scrollTimeout) {
+      return;
+    }
+
+    $('html, body').animate({
+      scrollTop: scrollCount
+      }, 800, function(){
+    });
+
+    scrollTimeout = setTimeout(function() {
+      scrollTimeout = undefined
+    }, 1000);
+  }, wheelOpt); // modern desktop
+
+  $(document).ready(function(){
+    /** 
+    // Add smooth scrolling to all links
+    $(document).on('scroll', function(event) {
+      event.preventDefault();
+      if (scrollTimeout) {
+        return;
+      }
+
+      scrollCount += 50;
+      console.log('event:scrollCount:' + scrollCount)
+      $('html, body').animate({
+        scrollTop: scrollCount
+        }, 800, function(){
+      });
+      scrollTimeout = setTimeout(function() {
+        scrollTimeout = undefined
+      }, 2000);
+    });
+    */
+  });
 </script>
