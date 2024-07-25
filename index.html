@@ -26,7 +26,8 @@
   <section id="donut-section">
     <model-viewer id="donut-model-viewer" alt="Fungus Donut" src="assets/donut.gltf" ar
       ar-modes="webxr scene-viewer quick-look" environment-image="" poster="" seamless-poster shadow-intensity="1"
-      enable-pan camera-orbit="0deg 65deg 105%"></model-viewer>
+      enable-pan camera-orbit="0deg 65deg 105%" camera-controls interaction-prompt="none">
+    </model-viewer>
   </section>
   <section id="profile-section" class="page-div">
     <div class="profile-background-div"></div>
@@ -199,6 +200,7 @@
 <script type="text/javascript">
   let experienceIndent = 0
   let data = {}
+  const modelViewerPrompt = document.querySelector("#donut-model-viewer");
   loadJSON = (filepath) => {
     return new Promise((resolve, reject) => {
       var xobj = new XMLHttpRequest();
@@ -277,6 +279,7 @@
   }
 
   // modern Chrome requires { passive: false } when adding event
+  var scrollHeight = 100;
   var supportsPassive = false;
   try {
     window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
@@ -287,27 +290,81 @@
   var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
   let scrollTimeout;
   var wheelOpt = supportsPassive ? { passive: false } : false;
+
+  // 3d model variable
+  let fingerFrame = 0;
+  const PROMT_MS = 500;
+  const DEFAULT_FINGER_VALUE = {
+    x: {
+      initialValue: 0.6,
+      keyframes: [
+        {frames: 1, value: 0.6},
+        {frames: 1, value: 0.6},
+      ]
+    },
+    y: {
+      initialValue: 0.1,
+      keyframes: [
+        {frames: 1, value: 0.1},
+      ]
+    }
+  };
+  let finger0 = DEFAULT_FINGER_VALUE;
+  let fingerDirection = 1;
+
+  function triggerInteract() {
+    modelViewerPrompt.interact(PROMT_MS, finger0);
+  }
+
   window.addEventListener(wheelEvent, function(e) {
-    e.preventDefault();
-    console.log('e:', e)
     if (e.deltaY < 0 && scrollCount > 50) {
-      scrollCount -= 58;
+      scrollCount -= scrollHeight;
+      fingerFrame--;
+      fingerDirection = -1;
     } else {
-      scrollCount += 58;
+      scrollCount += scrollHeight;
+      fingerFrame++;
+      fingerDirection = 1;
+    }
+    // 3d model move
+
+    finger0 = JSON.parse(JSON.stringify(DEFAULT_FINGER_VALUE));
+    console.log('fingerDirection', fingerDirection)
+    console.log('fingerFrame', fingerFrame)
+    finger0.y.keyframes.push({frames: 1, value: (100 + (fingerDirection * 9)) / 1000})
+
+    console.log('finger0', finger0)
+    triggerInteract();
+    /*
+    e.preventDefault();
+    console.log('e:', scrollTimeout)
+    if (e.deltaY < 0 && scrollCount > 50) {
+      scrollCount -= scrollHeight;
+    } else {
+      scrollCount += scrollHeight;
     }
 
     if (scrollTimeout) {
       return;
     }
 
+    console.log('s:', scrollCount)
     $('html, body').animate({
-      scrollTop: scrollCount
+        scrollTop: scrollCount
       }, 800, function(){
     });
+    
 
     scrollTimeout = setTimeout(function() {
+      console.log('scrollCount:', scrollCount)
       scrollTimeout = undefined
+      $('html, body').animate({
+        scrollTop: scrollCount
+        }, 800, function(){
+      });
     }, 1000);
+    console.log('scrollTimeout:', scrollTimeout )
+    */
   }, wheelOpt); // modern desktop
 
   $(document).ready(function(){
@@ -330,5 +387,10 @@
       }, 2000);
     });
     */
+
   });
+
+
+
+  // setTimeout(triggerInteract, 1000);
 </script>
