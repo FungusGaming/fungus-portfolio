@@ -46,9 +46,6 @@
   <!-- Experience -->
   <section id="experience-section" class="page-div experience-div">
     <div class="flex-row">
-      <div id="experience-nav-prev" class="experience-nav-div flex-column justify-center">
-        <span class="fas fa-angle-left"></span>
-      </div>
       <div class="flex-one">
         <h3 class="project-title"><a href="#experience-section">Timeline</a></h3>
         <article id="experience-article" class="experienceArticle">
@@ -60,9 +57,6 @@
           <ul id="experience-description">
           </ul>
         </article>
-      </div>
-      <div id="experience-nav-next" class="experience-nav-div flex-column justify-center">
-        <span class="fas fa-angle-right"></span>
       </div>
     </div>
   </section>
@@ -198,8 +192,8 @@
 </body>
 </html>
 <script type="text/javascript">
-  let experienceIndent = 0
-  let data = {}
+  let data
+  let experienceIndent = 3
   const modelViewerPrompt = document.querySelector("#donut-model-viewer");
   loadJSON = (filepath) => {
     return new Promise((resolve, reject) => {
@@ -217,49 +211,42 @@
   }
 
   loadExperience = async (indent) => {
-    const experienceDescription = document.getElementById("experience-description")
-    data = await loadJSON('data/data.json')
     const experience = data.experience
-    Object.keys(experience[indent].content).forEach((key) => {
-      if(key !== 'description') document.getElementById("experience-" + key).innerText = experience[indent]['content'][key]
-    })
-    const dateFrom = new Date(experience[indent]['from']);
-    const dateTo = experience[indent]['to'] ? new Date(experience[indent]['to']) : new Date() ;
-    document.querySelector('#experience-time').innerText = timeSince(dateFrom, dateTo)
-    document.getElementById('experience-company').setAttribute('href', experience[indent].companyLink)
-    experience[indent].companyLink === '#experience-section' ? document.getElementById('experience-company').setAttribute('target', '_self') : document.getElementById('experience-company').setAttribute('target', '_blank')
-    experienceDescription.innerHTML = ''
-    experience[indent].description.forEach((d) => {
-      let li = document.createElement('li')
-      let p = document.createElement('p')
-      p.innerText = d
-      li.appendChild(p);
-      experienceDescription.appendChild(li)
-    })
+    if (indent > experience.length) {
+      return;
+    }
 
-    hideNav(indent, experience.length)
-  }
+    for (let i = 0; i <= 0; i++) {
+      const experienceDescription = document.getElementById("experience-description")
+      const dateFrom = new Date(experience[i]['from']);
+      const dateTo = experience[i]['to'] ? new Date(experience[i]['to']) : new Date() ;
+      experience[i]['content']['time'] = timeSince(dateFrom, dateTo);
+      experience[i]['content']['duration'] = dateFrom.toLocaleDateString() + ' - ' + dateTo.toLocaleDateString()
+      Object.keys(experience[i].content).forEach((key) => {
+        if(key !== 'description') document.getElementById("experience-" + key).innerText = experience[i]['content'][key]
+      })
 
-  hideNav = (indent, length) => {
-    document.getElementById("experience-nav-prev").style.visibility = "visible"
-    document.getElementById("experience-nav-next").style.visibility = "visible"
-    if(indent === 0) {
-      document.getElementById("experience-nav-prev").style.visibility = "hidden"
-    } else if (indent === length - 1) {
-      document.getElementById("experience-nav-next").style.visibility = "hidden"
+      if (experience[i].companyLink) {
+        document.getElementById('experience-company').setAttribute('href', experience[i].companyLink)
+      }
+      experience[i].companyLink === '#experience-section' ? document.getElementById('experience-company').setAttribute('target', '_self') : document.getElementById('experience-company').setAttribute('target', '_blank')
+      experienceDescription.innerHTML = ''
+      experience[i].description.forEach((d) => {
+        let li = document.createElement('li')
+        let p = document.createElement('p')
+        p.innerText = d
+        li.appendChild(p);
+        experienceDescription.appendChild(li)
+      })
     }
   }
 
-  document.getElementById("experience-nav-next").addEventListener("click", (e) => {
-    if(experienceIndent !== data.experience.length - 1) experienceIndent++;
-    loadExperience(experienceIndent)
-  })
-  document.getElementById("experience-nav-prev").addEventListener("click", (e) => {
-    if(experienceIndent !== 0) experienceIndent--;
-    loadExperience(experienceIndent)
-  })
+  loadData = async () => {
+    data = await loadJSON('data/data.json')
+    loadExperience();
+  }
   
-  loadExperience(experienceIndent)
+  loadData(experienceIndent)
 
   function timeSince(dateFrom, dateTo) {
     const seconds = Math.floor((dateTo - dateFrom) / 1000);
@@ -329,13 +316,10 @@
     // 3d model move
 
     finger0 = JSON.parse(JSON.stringify(DEFAULT_FINGER_VALUE));
-    console.log('fingerDirection', fingerDirection)
-    console.log('fingerFrame', fingerFrame)
     finger0.y.keyframes.push({frames: 1, value: (100 + (fingerDirection * 9)) / 1000})
-
-    console.log('finger0', finger0)
     triggerInteract();
-    /*
+
+    /* test scroll parall
     e.preventDefault();
     console.log('e:', scrollTimeout)
     if (e.deltaY < 0 && scrollCount > 50) {

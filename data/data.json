@@ -2,6 +2,21 @@
   "experience": [
     {
       "content": {
+        "title": "Software Engineer I",
+        "company": "Appspace (M) Sdn. Bhd.",
+        "duration": "Jan 2022 - Jun 2022"
+      },
+      "description": [
+        "TODO",
+        "TODO",
+        "TODO"
+      ],
+      "companyLink": "https://www.appspace.com/",
+      "from": "2022-07-15",
+      "to": ""
+    },
+    {
+      "content": {
         "title": "Software Engineer II",
         "company": "Kaodim Sdn. Bhd.",
         "duration": "Jan 2022 - Jun 2022"
@@ -11,9 +26,9 @@
         "Best practiced for full SDLC of web development",
         "Optimzed of frontend performance to deliver scalable, smooth, blazing-fast web pages"
       ],
-      "companyLink": "https://www.kaodim.com/",
+      "companyLink": "",
       "from": "2022-01-03",
-      "to": "2022-07-30"
+      "to": "2022-06-30"
     },
     {
       "content": {
