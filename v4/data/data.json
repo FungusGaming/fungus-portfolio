@@ -2,6 +2,21 @@
   "experience": [
     {
       "content": {
+        "title": "Software Engineer I",
+        "company": "Appspace (M) Sdn. Bhd.",
+        "duration": "Jan 2022 - current"
+      },
+      "description": [
+        "Partnered with Microsoft, Neat, and Google to define and implement Digital Signage product solutions, ensuring alignment with client requirements.",
+        "Delivered clean, readable, and maintainable AngularJS, React Typescript and C# code aligned with requirements and quality standards.",
+        "Collaborated with the Development Leads and Scum team  to estimate effort and scope for assigned tasks, ensuring efficient resource planning."
+      ],
+      "companyLink": "https://www.appspace.com/",
+      "from": "2022-07-01",
+      "to": ""
+    },
+    {
+      "content": {
         "title": "Software Engineer II",
         "company": "Kaodim Sdn. Bhd.",
         "duration": "Jan 2022 - current"
@@ -13,7 +28,7 @@
       ],
       "companyLink": "https://www.kaodim.com/",
       "from": "2022-01-03",
-      "to": ""
+      "to": "2022-06-30"
     },
     {
       "content": {
