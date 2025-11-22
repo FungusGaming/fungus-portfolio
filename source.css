@@ -1,46 +1,55 @@
-@media (prefers-color-scheme: dark) {
-  :root{
-    --green-color: #226422;
-    --primary-color: #eafff9;
-    --smoke-color: #fafafa;
-    --primary-text: #fafafa;
-    --second-text-color: #d6d6d6;
-    --background-color: #0a0909;
-  
-    --neon-blue: #03e9f4;
-    --neon-purple: #ed0cef;
-    --neon-yellow: #f1fa3c;
-    --neon-pink: #ea2c62;
-    --neon-green: #00ff45;
-  }
+:root {
+  --bg-color: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+
+  /* Original bright neon colors */
+  --neon-blue: #00f3ff;
+  --neon-purple: #bc13fe;
+  --neon-pink: #ff0055;
+  --neon-green: #0aff0a;
+  --neon-yellow: #f1fa3c;
+
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-display: 'Courier New', Courier, monospace;
+  /* Placeholder for Bungee if not loaded */
 }
 
 @font-face {
-	font-family: 'BungeeHairline';
-	src: url('Bungee_Hairline/BungeeHairline-Regular.ttf');
+  font-family: 'BungeeHairline';
+  src: url('Bungee_Hairline/BungeeHairline-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-html, body {
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
   overflow-x: hidden;
-  background-color: var(--background-color) !important;
+  line-height: 1.6;
 }
 
-p, ul li {
-  color: var(--primary-color)
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
 }
 
-h2, h4 {
-  color: var(--neon-yellow);
+ul {
+  list-style: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
+/* --- Utilities --- */
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -51,8 +60,8 @@ h2, h4 {
   flex-direction: column;
 }
 
-.flex-one {
-  flex: 1;
+.space-between {
+  justify-content: space-between;
 }
 
 .justify-center {
@@ -63,266 +72,344 @@ h2, h4 {
   align-items: center;
 }
 
-.space-between {
-  justify-content: space-between;
-}
-
-.second-text {
-  color: var(--second-text-color);
+.flex-one {
+  flex: 1;
 }
 
 .page-div {
+  min-height: 100vh;
+  width: 100%;
   position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-.academic-div, .project-div, .experience-div, .about-me-div {
-  padding: 6% 30px 30px;
-}
-
-#navbar-section {
-  padding: 1em 2em;
-  z-index: 2;
-}
-
-#navbar-section nav a {
-  padding: 0 0.5em;
-  letter-spacing: 2px;
-  font-size: 2rem;
-  text-shadow: -1.5px 0px 0 var(--neon-blue), 1px 0px 0 var(--neon-blue), 0px 1px 0 var(--neon-blue), 0px -1.5px 0 var(--neon-blue);
-  font-weight: bold;
-}
-
-#donut-section {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-}
-
-#donut-model-viewer {
-  width: 100vw;
-  height: 50vh;
-}
-
-.profile-picture {
-  border-radius: 100%;
-  border: 20px solid white;
-  max-width: 20%;
-}
-
-.profile-picture-div {
-  position:absolute;
-  top: -30vmin;
-  text-align: center;
-  width: 100%;
-  z-index: 1;
-}
-
-.profile-background-div {
-  position: fixed;
-  height: 60%;
-  width: 100%;
-  bottom: 0;
-}
-
-.profile-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.biodata {
-  bottom: 0;
-  margin-top: -10%;
-  text-align: center;
-  width: 100%;
-  padding: 15% 0 5%;
-  z-index: 1;
-}
-
-#position {
-  font-size: 3rem;
-}
-
-#slogan {
-  font-size: 2rem;
+  padding: 80px 20px;
 }
 
 .project-title {
-  font-size: calc(4rem + .9vw);
+  font-family: 'BungeeHairline', var(--font-display);
+  font-size: 3rem;
   text-align: center;
-  text-decoration: underline;
+  margin-bottom: 2rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/*
-.academic-div {
-  color: var(--primary-text);
+/* --- Navbar --- */
+#navbar-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(5, 5, 5, 0.8);
+  /* Dark navbar as requested */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  /* Force white text on dark navbar */
 }
 
-.academic-information-div {
-  width:100%; 
-  padding-top: 10%; 
-  padding-left: 5%;
+#navbar-section h2 {
+  font-family: 'BungeeHairline', var(--font-display);
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-pink);
+  margin: 0;
 }
 
-.academic-svg {
-  top:100%;
-  margin-top:10%;
-  left:10%;
-}
-
-.experience-div ul li {
-  margin-bottom: 8px;
-}
-
-.project-card-div {
-  padding: 30px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  border-radius: 10px;
-  min-width: 400px;
-  margin-top: 30px;
-}
-
-.project-card-div {
-  width: 20%;
-  height: 50%;
-}
-
-.project-card-div:nth-child(2) {
-  z-index: 2;
-  height: 70%;
-  color: var(--primary-text)
-}
-
-.project-card-title {
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.project-card-subtitle {
-  font-size: 0.7rem;
-}
-
-.project-card-caption {
-  margin: 20px 0;
-}
-
-.project-div {
+#navbar-section nav a {
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  /* Force white text on dark navbar */
   position: relative;
-  width: 100vw;
-  height: 100vh;
 }
 
-.project-div ul {
-  list-style: none;
+#navbar-section nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px var(--neon-blue);
 }
 
-.project-div ul li:before {
-  content: '✓';
-  margin-right: 10px;
+/* --- Donut / Hero Model --- */
+#donut-section {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
-.academic-information-div i {
-  margin-right: 5px;
-  width: 16px;
+#donut-model-viewer {
+  width: 100%;
+  height: 100%;
 }
 
-.about-me-div i {
-  font-size: 2rem;
-  margin-right: 15px;
+/* --- Profile Section --- */
+#profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 0;
+  /* Merges with donut section visually */
 }
 
-@media (max-width: 1280px)
-{
-  .project-card-div {
-    min-width: 300px;
-    height: 60%;
-  }
-
-  .project-card-div:nth-child(2){
-    height: 80%;
-  }
-  
-  .profile-picture {
-    max-width: 30%;
-  }
+.profile-picture-div {
+  margin-bottom: 2rem;
+  position: relative;
 }
 
-@media (max-width: 1024px)
-{
-  .project-card-div {
-    min-width: 300px;
-  }
-
-  .profile-picture {
-    max-width: 50%;
-  }
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--neon-purple);
+  box-shadow: 0 0 20px var(--neon-purple), inset 0 0 20px var(--neon-purple);
+  object-fit: cover;
 }
 
-@media (max-width: 960px) {
-  .profile-background-div {
-    position: absolute;
-  }
-  .project-div, .page-div {
-    width: 100%;
-    height: 100%;
-  }
-
-  .experience-div {
-    padding: 30px 0;
-  }
-
-  .project-card-div {
-    flex: 1 100%;
-  }
+.biodata h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
-@media (max-width: 900px)  {
-  .project-title {
-    font-size: 3rem;
-  }
-  .profile-picture {
-    max-width: 50%;
-    border-width: 10px;
-  }
+.biodata #position {
+  font-size: 1.5rem;
+  color: var(--neon-green);
+  text-shadow: 0 0 5px var(--neon-green);
+  margin-bottom: 0.5rem;
 }
 
-.experienceArticle {
-  margin: 10% 0px;
+.biodata #slogan {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* --- Experience Section --- */
+.experience-div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#experience-article {
+  border-left: 2px solid var(--neon-blue);
+  padding-left: 2rem;
+  margin-left: 1rem;
+  position: relative;
+}
+
+#experience-article::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+#experience-title {
+  color: var(--neon-yellow);
+  margin-bottom: 0.5rem;
+}
+
+#experience-company {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  text-decoration: underline;
+  text-decoration-color: var(--neon-pink);
 }
 
 .second-text {
-  color: var(--second-text-color);
-}
-
-.experience-nav-div .fas {
-  padding: 15px;
-  margin-right: 10px;
-  border-radius: 50%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.project-title a, .project-title a:active, .project-title a:visited, .project-title a:focus, .project-title a:hover {
-  color: inherit;
-}
-
-ol, ul {
-  padding-left: 1rem;
-}
-*/
-
-
-.dot{
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
   display: block;
+}
+
+#experience-description li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+#experience-description li::before {
+  content: '>';
   position: absolute;
+  left: 0;
+  color: var(--neon-green);
+}
+
+/* --- Education Section --- */
+.academic-div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.academic-information-div {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.academic-information-div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.2);
+  border-color: var(--neon-blue);
+}
+
+.academic-information-div h2 {
+  color: var(--neon-purple);
+  margin-bottom: 1.5rem;
+}
+
+.academic-information-div p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.academic-information-div i {
+  margin-right: 1rem;
+  color: var(--neon-pink);
   width: 20px;
-  height: 20px;
-  transform: translateX(-50%) translateY(-50%);
-  border-radius: 50%;
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.7), 0px 0px 5px 1px rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+/* --- Project Section --- */
+#project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-div {
+  background: var(--card-bg);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-div:hover {
+  transform: scale(1.05);
+  border-color: var(--neon-green);
+  box-shadow: 0 0 20px rgba(10, 255, 10, 0.2);
+}
+
+.project-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--neon-yellow);
+  margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.project-card-caption {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.project-card-div ul li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  list-style-type: disc;
+  margin-left: 1.2rem;
+}
+
+/* --- About Me --- */
+.about-me-div {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-me-div p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-me-div .flex-row a {
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  color: var(--text-primary);
+}
+
+.about-me-div .flex-row a:hover {
+  color: var(--neon-blue);
+  transform: scale(1.2);
+  text-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .page-div {
+    padding: 60px 15px;
+  }
+
+  #navbar-section {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #navbar-section nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #navbar-section nav a {
+    margin: 0 0.8rem;
+    font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .biodata h2 {
+    font-size: 2rem;
+  }
+
+  .biodata #position {
+    font-size: 1.2rem;
+  }
+
+  .project-card-div {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }
