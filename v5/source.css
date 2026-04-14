@@ -1,0 +1,328 @@
+:root {
+  --bg-color: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+
+  /* Original bright neon colors */
+  --neon-blue: #00f3ff;
+  --neon-purple: #bc13fe;
+  --neon-pink: #ff0055;
+  --neon-green: #0aff0a;
+  --neon-yellow: #f1fa3c;
+
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-display: 'Courier New', Courier, monospace;
+  /* Placeholder for Bungee if not loaded */
+}
+
+@font-face {
+  font-family: 'BungeeHairline';
+  src: url('Bungee_Hairline/BungeeHairline-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Utilities --- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-one {
+  flex: 1;
+}
+
+.page-div {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 80px 20px;
+}
+
+.project-title {
+  font-family: 'BungeeHairline', var(--font-display);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- Navbar --- */
+#navbar-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(5, 5, 5, 0.8);
+  /* Dark navbar as requested */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  /* Force white text on dark navbar */
+}
+
+#navbar-section h2 {
+  font-family: 'BungeeHairline', var(--font-display);
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-pink);
+  margin: 0;
+}
+
+#navbar-section nav a {
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  /* Force white text on dark navbar */
+  position: relative;
+}
+
+#navbar-section nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* --- Donut / Hero Model --- */
+#donut-section {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+#donut-model-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Profile Section --- */
+#profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 0;
+  /* Merges with donut section visually */
+}
+
+.profile-picture-div {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--neon-purple);
+  box-shadow: 0 0 20px var(--neon-purple), inset 0 0 20px var(--neon-purple);
+  object-fit: cover;
+}
+
+transition: transform 0.3s ease;
+}
+
+.academic-information-div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.2);
+  border-color: var(--neon-blue);
+}
+
+.academic-information-div h2 {
+  color: var(--neon-purple);
+  margin-bottom: 1.5rem;
+}
+
+.academic-information-div p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.academic-information-div i {
+  margin-right: 1rem;
+  color: var(--neon-pink);
+  width: 20px;
+  text-align: center;
+}
+
+/* --- Project Section --- */
+#project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-div {
+  background: var(--card-bg);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-div:hover {
+  transform: scale(1.05);
+  border-color: var(--neon-green);
+  box-shadow: 0 0 20px rgba(10, 255, 10, 0.2);
+}
+
+.project-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--neon-yellow);
+  margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.project-card-caption {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.project-card-div ul li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  list-style-type: disc;
+  margin-left: 1.2rem;
+}
+
+/* --- About Me --- */
+.about-me-div {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-me-div p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-me-div .flex-row a {
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  color: var(--text-primary);
+}
+
+.about-me-div .flex-row a:hover {
+  color: var(--neon-blue);
+  transform: scale(1.2);
+  text-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .page-div {
+    padding: 60px 15px;
+  }
+
+  #navbar-section {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #navbar-section nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #navbar-section nav a {
+    margin: 0 0.8rem;
+    font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .biodata h2 {
+    font-size: 2rem;
+  }
+
+  .biodata #position {
+    font-size: 1.2rem;
+  }
+
+  .project-card-div {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
