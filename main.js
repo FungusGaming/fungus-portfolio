@@ -1,8 +1,29 @@
 let data;
 
+// ---- Score ----
+
+const SCREEN_POINTS = {
+  'screen-title':     100,
+  'screen-quest':     250,
+  'screen-stats':     300,
+  'screen-inventory': 500,
+  'screen-credits':   150,
+};
+
+let score = 0;
+let currentScreen = 'screen-title';
+
+function addScore(screenId) {
+  score += SCREEN_POINTS[screenId] || 100;
+  const el = document.getElementById('hi-score');
+  if (el) el.textContent = String(score).padStart(5, '0');
+}
+
 // ---- Screen Navigation ----
 
 function showScreen(targetId) {
+  if (targetId === currentScreen) return;
+
   const screens = document.querySelectorAll('.screen');
   const buttons = document.querySelectorAll('.nav-btn');
 
@@ -12,12 +33,14 @@ function showScreen(targetId) {
   const targetScreen = document.getElementById(targetId);
   if (targetScreen) {
     targetScreen.classList.add('active');
-    // Re-trigger stat bar animations when CHAR STATS becomes active
     if (targetId === 'screen-stats') animateStatBars();
   }
 
   const activeBtn = document.querySelector(`.nav-btn[data-target="${targetId}"]`);
   if (activeBtn) activeBtn.classList.add('active');
+
+  currentScreen = targetId;
+  addScore(targetId);
 }
 
 function initNav() {
