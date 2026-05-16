@@ -107,13 +107,22 @@ const loadExperience = () => {
     const card = document.createElement('article');
     card.className = 'experience-card';
 
-    const headerDiv = document.createElement('div');
-    headerDiv.style.marginBottom = '12px';
+    // Title row: job title + duration on same line
+    const titleRow = document.createElement('div');
+    titleRow.className = 'experience-title-row';
 
     const title = document.createElement('h2');
     title.className = 'experience-title';
     title.innerText = exp.content.title.toUpperCase();
 
+    const timeDiv = document.createElement('span');
+    timeDiv.className = 'second-text';
+    timeDiv.innerHTML = `${timeString ? timeString + ' &mdash; ' : ''}${durationString}`;
+
+    titleRow.appendChild(title);
+    titleRow.appendChild(timeDiv);
+
+    // Company row below
     const companyLink = document.createElement('a');
     companyLink.className = 'experience-company';
     companyLink.innerText = exp.content.company;
@@ -122,16 +131,6 @@ const loadExperience = () => {
       companyLink.target = '_blank';
       companyLink.rel = 'noopener noreferrer';
     }
-
-    const companyHeader = document.createElement('p');
-    companyHeader.appendChild(companyLink);
-
-    headerDiv.appendChild(title);
-    headerDiv.appendChild(companyHeader);
-
-    const timeDiv = document.createElement('div');
-    timeDiv.className = 'second-text';
-    timeDiv.innerHTML = `${timeString ? timeString + ' &mdash; ' : ''}${durationString}`;
 
     const descList = document.createElement('ul');
     descList.className = 'experience-description';
@@ -142,8 +141,8 @@ const loadExperience = () => {
       descList.appendChild(li);
     });
 
-    card.appendChild(headerDiv);
-    card.appendChild(timeDiv);
+    card.appendChild(titleRow);
+    card.appendChild(companyLink);
     card.appendChild(descList);
     container.appendChild(card);
   });
