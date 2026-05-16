@@ -45,16 +45,18 @@ The root site is a single-page arcade cabinet experience with 5 screens navigabl
 
 **Styling & Theme:**
 - **Fonts**: Press Start 2P (headings, nav, pixel font) + VT323 (body, CRT terminal feel) from Google Fonts CDN
-- **Color tokens**: `--border` (#39ff14 neon green), `--accent` (#ff2d78 hot pink), `--accent2` (#00e5ff cyan), dark arcade theme
+- **Color tokens**: `--border` (#39ff14 neon green), `--accent` (#ff2d78 hot pink), `--accent2` (#00e5ff cyan), `--accent3` (#f1fa3c neon yellow), `--cta` (#ff6600 neon orange), dark arcade theme
+- **Glow effects**: `--glow-border`, `--glow-accent`, `--glow-yellow`, `--glow-cta` for neon styling
 - **Effects**: CRT scanlines (fixed overlay), neon glow via box-shadow, blinking animations, pixel borders
 - **Layout**: Flex-based screens filling viewport; `.screen.active` shown, others hidden; `@keyframes screenIn` for smooth fade/scale transitions
 
 **Vanilla JS (no jQuery/Bootstrap):**
-- `showScreen(id)` — toggle active screens and nav buttons
+- `showScreen(id)` — toggle active screens and nav buttons; increments score based on screen visited (PLAYER 1: 100, QUEST LOG: 250, CHAR STATS: 300, INVENTORY: 500, CREDITS: 150), no repeat scoring
 - `animateStatBars()` — re-trigger stat bar fill width on CHAR STATS activation
 - `loadJSON()` / `loadData()` — async XHR to fetch `data.json`
-- `loadExperience()` — build experience cards DOM from data
+- `loadExperience()` — build experience cards DOM from data; first card labeled "CURRENT QUEST" in neon yellow with yellow left border, others labeled "▶ QUEST" in dim text
 - Nav buttons wired via `initNav()` event listeners
+- Score display shows in-game hi-score at top of screen
 
 **Data schema (`data/data.json`):**
 ```json

@@ -146,3 +146,34 @@ Active button gets neon green glow + `▶` prefix. Clicking fires `showScreen(id
 - **Verified**: All 5 screens render, navigation functions, experience cards load from data.json, 3D donut displays, stat bars animate on activation
 
 The portfolio is now a memorable retro arcade gaming experience reflecting FungusGaming's identity as a gamer-developer.
+
+---
+
+## Post-Implementation Refinements (2025-05-16)
+
+**Visual Enhancements:**
+- Added `--cta` (#ff6600 neon orange) and `--glow-cta` CSS variables for call-to-action links
+- Added `--accent3` (#f1fa3c neon yellow) and `--glow-yellow` CSS variables
+- Contact links in CREDITS screen: neon orange CTA color, underlined
+- Inventory links (item-name, item-link): neon orange CTA color, underlined
+- Experience company links: neon orange CTA color, underlined, no glow
+- Reduced glow effects from: player name, education degree, inventory card content, and inventory item borders for cleaner visual hierarchy
+
+**Gamification:**
+- Added hi-score system with per-screen point awards:
+  - PLAYER 1: 100 points
+  - QUEST LOG: 250 points
+  - CHAR STATS: 300 points
+  - INVENTORY: 500 points
+  - CREDITS: 150 points
+- Scores only awarded once per unique screen visit (no repeat scoring)
+- Score displays in-game at top of screen
+
+**Experience Card Redesign:**
+- First experience card labeled "CURRENT QUEST" in neon yellow with yellow left border
+- Remaining cards labeled "▶ QUEST" in dim text
+- Improved flex layout: title + duration on same row, distinct colors per element (pink title, cyan company, dim duration)
+
+**UI Refinements:**
+- Title screen: removed SELECT MODE blink animation, renamed INSERT COIN prompt to SELECT MODE with down arrow indicators
+- Credits content: updated to sentence case for improved readability
