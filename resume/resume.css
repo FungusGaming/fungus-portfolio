@@ -1,0 +1,293 @@
+/* ==========================================================
+   One-page A4 resume — screen preview + print stylesheet.
+   The .page element *is* the A4 sheet; @page margin is 0 so
+   browsers don't add their own header/footer, and the sheet's
+   padding acts as the printed margin.
+   ========================================================== */
+
+:root {
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-margin-y: 12mm;
+  --page-margin-x: 14mm;
+
+  --ink: #1a1a1a;
+  --ink-muted: #4a4a4a;
+  --rule: #c9d3df;
+  --accent: #1f4e79;
+  --desk: #e9ecef;
+  --warn: #b42318;
+  --ok: #067647;
+
+  --font: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --fs-base: 9.5pt;
+  --fs-small: 8.75pt;
+  --fs-name: 20pt;
+  --fs-heading: 10pt;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: 1.38;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Toolbar (screen only) ---------- */
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+}
+
+.toolbar__link {
+  color: var(--accent);
+}
+
+.toolbar__status {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+}
+
+.toolbar__status.is-ok {
+  color: var(--ok);
+}
+
+.toolbar__status.is-over {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+.toolbar__button {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toolbar__button:focus-visible,
+.toolbar__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- A4 sheet ---------- */
+
+.page {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  margin: 24px auto;
+  padding: var(--page-margin-y) var(--page-margin-x);
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.page.is-over {
+  /* Red line at the A4 boundary when content overflows */
+  background:
+    linear-gradient(var(--warn), var(--warn)) 0 calc(var(--page-height) - 1px) / 100% 2px no-repeat,
+    #fff;
+}
+
+.page__loading {
+  color: var(--ink-muted);
+}
+
+.page__error {
+  color: var(--warn);
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  margin-bottom: 8pt;
+}
+
+.header__name {
+  margin: 0;
+  font-size: var(--fs-name);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.header__title {
+  margin: 2pt 0 4pt;
+  color: var(--accent);
+  font-size: 11pt;
+  font-weight: 600;
+}
+
+.header__contact {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+}
+
+.header__contact li:not(:last-child)::after {
+  content: "|";
+  margin: 0 6pt;
+  color: var(--rule);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  margin-top: 8pt;
+}
+
+.section__heading {
+  margin: 0 0 4pt;
+  padding-bottom: 2pt;
+  border-bottom: 1px solid var(--rule);
+  color: var(--accent);
+  font-size: var(--fs-heading);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summary,
+.languages {
+  margin: 0;
+}
+
+.skills {
+  list-style: none;
+}
+
+.skills li + li {
+  margin-top: 1pt;
+}
+
+.label {
+  font-weight: 600;
+}
+
+/* ---------- Experience / Projects / Education entries ---------- */
+
+.entry {
+  break-inside: avoid;
+}
+
+.entry + .entry {
+  margin-top: 6pt;
+}
+
+.entry__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12pt;
+}
+
+.entry__primary {
+  font-weight: 600;
+}
+
+.entry__secondary,
+.entry__date {
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+}
+
+.entry__date {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.entry__bullets {
+  margin-top: 2pt;
+  padding-left: 12pt;
+}
+
+.entry__bullets li + li {
+  margin-top: 1pt;
+}
+
+.entry__bullets li::marker {
+  color: var(--accent);
+}
+
+.entry__detail {
+  margin: 1pt 0 0;
+}
+
+/* ---------- Print ---------- */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    /* Never spill a blank second page from sub-pixel rounding */
+    height: var(--page-height);
+    overflow: hidden;
+  }
+
+  .page.is-over {
+    background: #fff;
+  }
+}
+
+/* ---------- Small screens: reflow instead of a fixed A4 sheet ---------- */
+
+@media screen and (max-width: 840px) {
+  .page {
+    width: auto;
+    min-height: 0;
+    margin: 16px;
+    padding: 20px 16px;
+  }
+
+  .entry__row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

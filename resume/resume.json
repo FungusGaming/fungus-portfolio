@@ -1,0 +1,106 @@
+{
+  "basics": {
+    "name": "Liew Wei Fung",
+    "title": "Senior Frontend Engineer",
+    "location": "Kuala Lumpur, Malaysia",
+    "workMode": "Open to remote",
+    "phone": "",
+    "email": "fungus0922@gmail.com",
+    "links": [
+      { "label": "linkedin.com/in/liew-wei-fung", "url": "https://www.linkedin.com/in/liew-wei-fung-69a91719a/" },
+      { "label": "github.com/FungusGaming", "url": "https://github.com/FungusGaming" },
+      { "label": "fungusgaming.github.io/fungus-portfolio", "url": "https://fungusgaming.github.io/fungus-portfolio/" }
+    ]
+  },
+  "summary": "Senior Frontend Engineer with 6+ years building web and mobile applications in React, TypeScript and AngularJS. Leads features and owns projects at Appspace, delivering Digital Signage to thousands of devices worldwide on Microsoft, Google and Neat hardware. Uses AI-assisted workflows (Claude Code, Cursor) day to day.",
+  "skills": [
+    { "category": "Languages", "items": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "C#"] },
+    { "category": "Frameworks", "items": ["React", "AngularJS", "React Native", "Ionic", "Node.js", "ASP.NET"] },
+    { "category": "Web Platform", "items": ["Progressive Web Apps (PWA)", "Service Workers", "Responsive Design", "REST APIs"] },
+    { "category": "Tools & Process", "items": ["Git", "Continuous Integration/Continuous Deployment (CI/CD)", "Agile/Scrum", "MySQL", "Claude Code", "Cursor"] }
+  ],
+  "experience": [
+    {
+      "company": "Appspace (M) Sdn. Bhd.",
+      "companyLink": "https://www.appspace.com/",
+      "location": "Kuala Lumpur",
+      "roles": [
+        { "title": "Senior Software Engineer I", "from": "", "to": "" },
+        { "title": "Software Engineer I", "from": "2022-07-15", "to": "" }
+      ],
+      "from": "2022-07-15",
+      "to": "",
+      "bullets": [
+        "Lead feature delivery and own projects end to end, proposing solutions and driving technical and product discussions.",
+        "Integrated the Appspace App with Microsoft Teams Rooms for digital signage playback, and maintained the existing Google Chromebox and Neat device integrations.",
+        "Implemented a PWA service-worker caching layer for assets and files on thousands of devices worldwide, avoiding millions of repeat downloads.",
+        "Built card and template features and admin console improvements in React, TypeScript and AngularJS for digital signage users.",
+        "Use Claude Code and Cursor to speed up code reviews, solution design and unit-test generation."
+      ]
+    },
+    {
+      "company": "Kaodim Sdn. Bhd.",
+      "companyLink": "",
+      "location": "Kuala Lumpur",
+      "roles": [{ "title": "Software Engineer II", "from": "2022-01-03", "to": "2022-06-30" }],
+      "from": "2022-01-03",
+      "to": "2022-06-30",
+      "bullets": [
+        "Built a messaging and notification system in React and React Native for a services marketplace with thousands of users.",
+        "Improved the booking-flow UI, translating UI/UX wireframes into reusable web and mobile components.",
+        "Shipped monthly releases with product and QA through code reviews and CI/CD pipelines."
+      ]
+    },
+    {
+      "company": "EDESK Sdn. Bhd.",
+      "companyLink": "https://www.edesk.com.my/",
+      "location": "Kuala Lumpur",
+      "roles": [{ "title": "Application Developer", "from": "2020-10-01", "to": "2021-12-31" }],
+      "from": "2020-10-01",
+      "to": "2021-12-31",
+      "bullets": [
+        "Developed and maintained ASP.NET C# web and Windows Forms applications for finance and HR products.",
+        "Redesigned web user interfaces to improve usability for day-to-day finance and HR users."
+      ]
+    },
+    {
+      "company": "Efichain Solution Sdn. Bhd.",
+      "companyLink": "https://www.efichain.com/",
+      "location": "Kuala Lumpur",
+      "roles": [{ "title": "Fullstack Developer (Intern)", "from": "2020-02-01", "to": "2020-07-31" }],
+      "from": "2020-02-01",
+      "to": "2020-07-31",
+      "bullets": [
+        "Built cross-platform applications with React, React Native and Ionic."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Budget",
+      "url": "https://budget-fung-public.web.app",
+      "tech": ["Ionic React", "PWA"],
+      "description": "Installable expense tracker for recording daily spending with a current-month overview."
+    },
+    {
+      "name": "Service Provider (Final Year Project)",
+      "url": "",
+      "tech": ["Google Maps API", "Geolocation"],
+      "description": "Location-based app to find and rate nearby service providers."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Science (Software Development)",
+      "school": "Universiti Teknikal Malaysia Melaka (UTeM)",
+      "from": "2017-09-01",
+      "to": "2020-08-31",
+      "details": ["CGPA 3.75 / 4.00", "Silver, Workshop 2 (2018)", "Bronze, UTeMEX 2019"]
+    }
+  ],
+  "languages": [
+    { "name": "English", "level": "Professional" },
+    { "name": "Mandarin", "level": "Native" },
+    { "name": "Malay", "level": "Conversational" }
+  ]
+}

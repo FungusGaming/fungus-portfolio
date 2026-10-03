@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liew Wei Fung — Resume</title>
+  <meta name="description" content="One-page resume of Liew Wei Fung, Senior Frontend Software Engineer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+  <div class="toolbar" role="toolbar" aria-label="Resume actions">
+    <a class="toolbar__link" href="../">&larr; Portfolio</a>
+    <p class="toolbar__status" id="fit-status" role="status" aria-live="polite"></p>
+    <button class="toolbar__button" id="print-button" type="button">Print / Save PDF</button>
+  </div>
+
+  <main class="page" id="resume" aria-busy="true">
+    <p class="page__loading">Loading resume&hellip;</p>
+  </main>
+
+  <script src="resume.js"></script>
+</body>
+</html>
