@@ -12,12 +12,12 @@
       { "label": "fungusgaming.github.io/fungus-portfolio", "url": "https://fungusgaming.github.io/fungus-portfolio/" }
     ]
   },
-  "summary": "Senior Frontend Engineer with 6+ years building web and mobile applications in React, TypeScript and AngularJS. Leads features and owns projects at Appspace, delivering Digital Signage to thousands of devices worldwide on Microsoft, Google and Neat hardware. Uses AI-assisted workflows (Claude Code, Cursor) day to day.",
+  "summary": "Senior Frontend Engineer with 6+ years of experience building web and mobile applications with React, TypeScript and AngularJS. Partners with product and engineering teams to turn requirements into features for products used by millions of users. Adopts AI-assisted workflows to speed up code reviews, solution design and testing.",
   "skills": [
     { "category": "Languages", "items": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "C#"] },
     { "category": "Frameworks", "items": ["React", "AngularJS", "React Native", "Ionic", "Node.js", "ASP.NET"] },
     { "category": "Web Platform", "items": ["Progressive Web Apps (PWA)", "Service Workers", "Responsive Design", "REST APIs"] },
-    { "category": "Tools & Process", "items": ["Git", "Continuous Integration/Continuous Deployment (CI/CD)", "Agile/Scrum", "MySQL", "Claude Code", "Cursor"] }
+    { "category": "Tools & Process", "items": ["Git", "Bamboo", "Azure", "Agile/Scrum", "MySQL", "Claude Code", "Cursor"] }
   ],
   "experience": [
     {
@@ -32,9 +32,9 @@
       "to": "",
       "bullets": [
         "Lead feature delivery and own projects end to end, proposing solutions and driving technical and product discussions.",
-        "Integrated the Appspace App with Microsoft Teams Rooms for digital signage playback, and maintained the existing Google Chromebox and Neat device integrations.",
+        "Integrated the Appspace App with Microsoft Teams Rooms for digital signage playback, and maintained 10+ different platform of device integrations including Google Chromebox and Neat device .",
         "Implemented a PWA service-worker caching layer for assets and files on thousands of devices worldwide, avoiding millions of repeat downloads.",
-        "Built card and template features and admin console improvements in React, TypeScript and AngularJS for digital signage users.",
+        "Built signage template features and admin console improvements in React, TypeScript and AngularJS for client.",
         "Use Claude Code and Cursor to speed up code reviews, solution design and unit-test generation."
       ]
     },
