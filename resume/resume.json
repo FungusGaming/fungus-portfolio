@@ -32,9 +32,9 @@
       "to": "",
       "bullets": [
         "Lead feature delivery and own projects end to end, proposing solutions and driving technical and product discussions.",
-        "Integrated the Appspace App with Microsoft Teams Rooms for digital signage playback, and maintained 10+ different platform of device integrations including Google Chromebox and Neat device .",
+        "Integrated the Appspace App with Microsoft Teams Rooms for digital signage playback, and maintained device integrations across 10+ platforms, including Google Chromebox and Neat devices.",
         "Implemented a PWA service-worker caching layer for assets and files on thousands of devices worldwide, avoiding millions of repeat downloads.",
-        "Built signage template features and admin console improvements in React, TypeScript and AngularJS for client.",
+        "Built signage template features and admin console improvements in React, TypeScript and AngularJS for clients.",
         "Use Claude Code and Cursor to speed up code reviews, solution design and unit-test generation."
       ]
     },
