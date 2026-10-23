@@ -16,7 +16,11 @@ Tailor `resume/resume.json` to the job scope below.
 2. **Map to my record.** For each requirement, find the matching evidence in `experience.md`. Note the gaps.
 3. **Edit `resume.json`:**
    - `basics.title`: adjust only if it is honest for the role (e.g. "Senior Frontend Engineer" vs "Senior Software Engineer").
-   - `summary`: 2-3 sentences. Lead with the job's top requirement and mirror its keywords where they are true. Keep the years of experience accurate.
+   - `summary`: 2-4 sentences and under 60 words. Rules:
+     - Open with title, years and core stack, using the posting's own terms where they are true. Keep the years of experience accurate.
+     - Include one real, defensible number from `experience.md` (years, or a resume-ready figure such as "10+ platforms").
+     - Show the business-to-technical bridge with one concrete example, such as turning requirements and designs into a named kind of feature.
+     - Never use "team player", "results-driven" or "passionate". Don't paste job-description phrasing wholesale or stuff keywords. Don't include any claim that can't be explained in an interview.
    - `skills`: order from best to neutral. Put the category with the job's most important keywords first, and within each category put must-have keywords before nice-to-haves and general skills. Drop irrelevant items. Add an item only if it appears in `experience.md`.
    - `projects`: order from best to neutral by relevance to the job. Drop the least relevant first if space is tight.
    - Keep `experience[]` companies, and each company's `roles`, in reverse chronological order. Best-to-neutral ordering applies to bullets, skills and projects, not companies, because reordering companies would misrepresent the career timeline.

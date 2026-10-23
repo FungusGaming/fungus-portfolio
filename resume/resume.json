@@ -12,12 +12,12 @@
       { "label": "fungusgaming.github.io/fungus-portfolio", "url": "https://fungusgaming.github.io/fungus-portfolio/" }
     ]
   },
-  "summary": "Senior Frontend Engineer with 6+ years of experience building responsive web applications with TypeScript, React and AngularJS. Turns business requirements and UI/UX designs into clean, maintainable components, working with product managers, designers and DevOps in Agile teams. Uses AI-assisted development tools (Claude Code, Cursor) to speed up code reviews, solution design and unit-test generation.",
+  "summary": "Senior Frontend Engineer with 6+ years building responsive web applications in TypeScript, HTML, CSS, React and AngularJS. Turn product requirements and Figma designs into maintainable signage template and admin console features. Maintain device integrations across 10+ platforms; use Claude Code and Cursor for reviews and unit tests.",
   "skills": [
     { "category": "Languages", "items": ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "C#"] },
     { "category": "Frameworks", "items": ["React", "AngularJS", "React Native", "Ionic", "Node.js", "ASP.NET"] },
     { "category": "Web Platform", "items": ["Responsive Design", "REST APIs", "Progressive Web Apps (PWA)", "Service Workers"] },
-    { "category": "Tools & Process", "items": ["Webpack", "Gulp", "Git", "Figma", "Agile/Scrum", "Jira", "Azure DevOps", "Bamboo", "Claude Code", "Cursor"] }
+    { "category": "Tools & Process", "items": ["Git", "Webpack", "Gulp", "Figma", "Agile/Scrum", "Azure DevOps", "Claude Code", "Cursor", "Bamboo", "Jira"] }
   ],
   "experience": [
     {
@@ -31,11 +31,11 @@
       "from": "2022-07-15",
       "to": "",
       "bullets": [
-        "Own projects end to end and work independently, proposing solutions and driving technical and product discussions.",
-        "Build signage template features and admin console improvements in React, TypeScript and AngularJS for clients.",
-        "Align requirements with Product Managers and UI/UX designers in Figma, and deliver clean, maintainable code aligned with quality standards.",
-        "Implemented a PWA service-worker caching layer for assets and files on thousands of devices worldwide, avoiding millions of repeat downloads.",
-        "Automate package bundling with Gulp and Webpack, and maintain Bamboo and Azure DevOps pipelines for iOS, Android and Electron builds."
+        "Build signage template features and admin console improvements in React, TypeScript and AngularJS for clients, delivering clean, readable, maintainable code to quality standards.",
+        "Implemented a PWA service-worker caching layer for assets and files on an estimated thousands of devices worldwide, avoiding an estimated millions of repeat downloads.",
+        "Own projects end to end, proposing solutions and driving technical and product discussions, and align requirements with Product Managers and UI/UX designers in Figma before implementation.",
+        "Automate package bundling with Gulp and Webpack, maintain Bamboo pipelines for iOS, Android and Electron builds, and migrated card build pipelines to Azure DevOps.",
+        "Use Claude Code and Cursor to speed up code reviews, solution design and unit-test generation."
       ]
     },
     {
@@ -46,8 +46,8 @@
       "from": "2022-01-03",
       "to": "2022-06-30",
       "bullets": [
-        "Built a messaging and notification system in React and React Native for a services marketplace with thousands of users.",
-        "Improved the booking-flow UI, translating UI/UX wireframes into reusable web and mobile components."
+        "Improved the booking-flow UI, translating UI/UX wireframes into reusable web and mobile components.",
+        "Built a messaging and notification system in React and React Native for a services marketplace with thousands of users."
       ]
     },
     {
