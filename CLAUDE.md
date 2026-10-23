@@ -25,6 +25,7 @@ The repo contains the live site at root plus several experimental sub-pages:
 |------|---------|
 | `index.html` / `main.js` / `source.css` | Live portfolio (root) |
 | `data/data.json` | Experience timeline data consumed by `main.js` |
+| `resume/` | Printable one-page A4 resume (`index.html`, `resume.js`, `resume.css`) rendered from `resume.json`; `experience.md` is the master record |
 | `v4/` | Earlier version of the portfolio (static snapshot) |
 | `3d/` | Standalone 3D donut viewer using `@google/model-viewer` |
 | `3d-ecommerce/` | Product card concept using `@google/model-viewer` |
@@ -75,5 +76,15 @@ The root site is a single-page arcade cabinet experience with 5 screens navigabl
 - `@google/model-viewer` (CDN) — 3D donut in Inventory screen
 - Google Fonts (Press Start 2P, VT323) — no local font files needed
 - No bundler, no framework, no build step
+
+**Resume (`resume/`):**
+- Served at `/resume/` (the page is `resume/index.html`; there is no `resume.html`). `resume.js` fetches `resume.json`, so it needs an HTTP server and won't work from `file://`.
+- `resume.json` must keep the keys `basics`, `summary`, `skills`, `experience`, `projects`, `education`, `languages` (`resume.js` throws if any are missing). Dates are `YYYY-MM-DD`; an empty `to` means Present.
+- `experience.md` is the single source of truth for tailoring. Every resume claim must come from it, and its `TODO` lines are unverified and internal, never copied into the resume.
+- **Confidentiality:** this repo is public. Don't record or publish internal company details (exact metrics, team size or structure, customer names, internal tools or URLs, unreleased features, model version numbers).
+- **One-page rule:** the `.page` element is the A4 sheet. In print, `overflow: hidden` clips anything past the sheet, so a PDF always has 1 page even when content is cut off. Never judge fit by PDF page count. `.page` also has `min-height: 297mm`, so `scrollHeight` never drops below A4 height. Measure free space from the last child's bottom edge plus the bottom padding, and keep at least 8px spare. Fix overflow by trimming `resume.json`, not by shrinking CSS.
+- Commands in `.claude/commands/`:
+  - `/tailor-resume <job description>` tailors `resume.json` to a job scope. It orders bullets, skills and projects best to neutral (companies stay chronological), combines related bullets, runs the one-page fit test (Playwright in the scratchpad) and a background `resume-reviewer` agent (`.claude/agents/resume-reviewer.md`) after the edit, and its reply starts with `Score: X/10`.
+  - `/serve` runs `npx serve .` in the background and shares the local resume link.
 
 **Sub-pages (`3d/`, `3d-ecommerce/`, `neon/`)** are self-contained with their own assets — they do not share CSS or JS with the root.
