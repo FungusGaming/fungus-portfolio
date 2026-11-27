@@ -51,7 +51,7 @@ The root site is a single-page arcade cabinet experience with 5 screens navigabl
 - **Layout**: Flex-based screens filling viewport; `.screen.active` shown, others hidden; `@keyframes screenIn` for smooth fade/scale transitions
 
 **Vanilla JS (no jQuery/Bootstrap):**
-- `showScreen(id)` — toggle active screens and nav buttons; increments score based on screen visited (PLAYER 1: 100, QUEST LOG: 250, CHAR STATS: 300, INVENTORY: 500, CREDITS: 150), no repeat scoring
+- `showScreen(id)` — toggle active screens and nav buttons; increments score the first time each screen is visited (QUEST LOG: 250, CHAR STATS: 300, INVENTORY: 500, CREDITS: 150; PLAYER 1 is the landing page and scores nothing). Scored screens persist in `localStorage` (`fungus-scored-screens`); a floating `+points` label rises under the hi-score; clicking the FUNGUS.EXE logo 3 times quickly resets the score
 - `animateStatBars()` — re-trigger stat bar fill width on CHAR STATS activation
 - `loadJSON()` / `loadData()` — async XHR to fetch `data.json`
 - `loadProjects()` — build INVENTORY project cards from `data.projects` after the featured donut (which stays hard-coded in `index.html`); `docs/prompts/project-summary.md` is the prompt for gathering a new project's card info

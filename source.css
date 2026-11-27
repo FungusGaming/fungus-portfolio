@@ -105,6 +105,32 @@ img { display: block; max-width: 100%; }
   color: var(--accent2);
   text-shadow: var(--glow-cyan);
   white-space: nowrap;
+  position: relative;
+}
+
+/* Floating "+250" shown when points are added; removed by main.js when it ends */
+.score-pop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  color: var(--accent3);
+  text-shadow: var(--glow-yellow);
+  pointer-events: none;
+  animation: scorePop 0.9s ease-out forwards;
+}
+
+@keyframes scorePop {
+  0%   { opacity: 0; transform: translateY(4px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .score-pop { animation-name: scorePopFade; }
+  @keyframes scorePopFade {
+    0%, 40% { opacity: 1; }
+    100%    { opacity: 0; }
+  }
 }
 
 /* ---- Screen Container ---- */

@@ -2,8 +2,9 @@ let data;
 
 // ---- Score ----
 
+// PLAYER 1 (screen-title) is left out: it's the landing page, so it's
+// already been seen and doesn't score.
 const SCREEN_POINTS = {
-  'screen-title':     100,
   'screen-quest':     250,
   'screen-stats':     300,
   'screen-inventory': 500,
@@ -46,6 +47,50 @@ function addScore(screenId) {
   scoredScreens.add(screenId);
   saveScoredScreens();
   renderScore();
+  showScorePop(SCREEN_POINTS[screenId]);
+}
+
+// Hidden reset: click the FUNGUS.EXE logo 3 times quickly to clear the score
+// so every screen can score again.
+const RESET_CLICKS = 3;
+const RESET_CLICK_GAP_MS = 500;
+
+function resetScore() {
+  scoredScreens.clear();
+  try {
+    localStorage.removeItem(SCORE_STORAGE_KEY);
+  } catch (e) {
+    // Storage unavailable: the in-memory score is still cleared.
+  }
+  renderScore();
+}
+
+function initScoreReset() {
+  const logo = document.querySelector('.nav-logo');
+  if (!logo) return;
+  let clicks = 0;
+  let lastClick = 0;
+  logo.addEventListener('click', () => {
+    const now = Date.now();
+    clicks = now - lastClick <= RESET_CLICK_GAP_MS ? clicks + 1 : 1;
+    lastClick = now;
+    if (clicks === RESET_CLICKS) {
+      clicks = 0;
+      resetScore();
+    }
+  });
+}
+
+// Floats a "+points" label under the hi-score that rises and fades out.
+function showScorePop(points) {
+  const scoreBox = document.querySelector('.nav-score');
+  if (!scoreBox) return;
+  const pop = document.createElement('span');
+  pop.className = 'score-pop';
+  pop.setAttribute('aria-hidden', 'true');
+  pop.textContent = '+' + points;
+  pop.addEventListener('animationend', () => pop.remove());
+  scoreBox.appendChild(pop);
 }
 
 // ---- Screen Navigation ----
@@ -277,6 +322,7 @@ function timeSince(dateFrom, dateTo) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  initScoreReset();
   renderScore();
   loadData();
 });
