@@ -137,7 +137,6 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-pixel);
   font-size: 0.75rem;
   color: var(--border);
-  text-shadow: var(--glow-green);
   letter-spacing: 2px;
   margin-bottom: 1rem;
   flex-shrink: 0;
@@ -360,7 +359,6 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-pixel);
   font-size: 0.55rem;
   color: var(--accent2);
-  text-shadow: var(--glow-cyan);
   letter-spacing: 2px;
   margin-bottom: 0.5rem;
 }
