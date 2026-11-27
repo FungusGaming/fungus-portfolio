@@ -177,10 +177,71 @@ const loadExperience = () => {
   });
 };
 
+const createExternalLink = (className, href, text) => {
+  const link = document.createElement('a');
+  link.className = className;
+  link.href = href;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = text;
+  return link;
+};
+
+// Builds the INVENTORY project cards. The featured donut card stays in index.html.
+const loadProjects = () => {
+  if (!data || !Array.isArray(data.projects)) return;
+
+  const grid = document.getElementById('inventory-grid');
+  if (!grid) return;
+  grid.querySelectorAll('.item-slot--project').forEach((card) => card.remove());
+
+  data.projects.forEach((project) => {
+    const card = document.createElement('article');
+    card.className = 'item-slot item-slot--project';
+
+    const tag = document.createElement('p');
+    tag.className = 'item-tag';
+    tag.textContent = project.tag;
+    card.appendChild(tag);
+
+    const name = document.createElement('p');
+    name.className = 'item-name';
+    if (project.liveUrl) {
+      name.appendChild(createExternalLink('', project.liveUrl, project.name + ' ►'));
+    } else {
+      name.textContent = project.name;
+    }
+    card.appendChild(name);
+
+    const desc = document.createElement('p');
+    desc.className = 'item-desc';
+    desc.textContent = project.description;
+    card.appendChild(desc);
+
+    if (Array.isArray(project.features) && project.features.length) {
+      const list = document.createElement('ul');
+      list.className = 'item-features';
+      project.features.forEach((feature) => {
+        const li = document.createElement('li');
+        li.textContent = '▪ ' + feature;
+        list.appendChild(li);
+      });
+      card.appendChild(list);
+    }
+
+    if (project.repoUrl) {
+      card.appendChild(createExternalLink('item-link', project.repoUrl, '[ GITHUB ]'));
+    }
+
+    grid.appendChild(card);
+  });
+};
+
 const loadData = async () => {
   try {
     data = await loadJSON('data/data.json');
     loadExperience();
+    loadProjects();
   } catch (e) {
     console.error('Failed to load data:', e);
     data = {

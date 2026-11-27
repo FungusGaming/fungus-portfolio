@@ -64,5 +64,55 @@
       "from": "2020-02-01",
       "to": "2020-07-31"
     }
+  ],
+  "projects": [
+    {
+      "tag": "SIDE PROJECT",
+      "name": "BudGet",
+      "description": "Log daily spending and stay under a monthly budget",
+      "features": [
+        "React + Vite (PWA)",
+        "Log expenses offline",
+        "Monthly budget tracker"
+      ],
+      "liveUrl": "https://bud-get-310b5.web.app/",
+      "repoUrl": ""
+    },
+    {
+      "tag": "SIDE PROJECT",
+      "name": "BUDGET",
+      "description": "Save your expenses for better",
+      "features": [
+        "Ionic React (PWA)",
+        "Record expenses",
+        "Current month view"
+      ],
+      "liveUrl": "https://budget-fung-public.web.app",
+      "repoUrl": "https://github.com/FungusGaming"
+    },
+    {
+      "tag": "FINAL YEAR PROJECT",
+      "name": "SERVICE PROVIDER",
+      "description": "Find the best service around you",
+      "features": [
+        "Google Maps API",
+        "Geo-location search",
+        "Rating system"
+      ],
+      "liveUrl": "",
+      "repoUrl": ""
+    },
+    {
+      "tag": "UNIVERSITY WORKSHOP",
+      "name": "iREAD",
+      "description": "Library system with fingerprint recognition",
+      "features": [
+        "Fingerprint auth",
+        "Enhanced borrow service",
+        "Bootstrap UI"
+      ],
+      "liveUrl": "",
+      "repoUrl": ""
+    }
   ]
 }

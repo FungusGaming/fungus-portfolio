@@ -54,6 +54,7 @@ The root site is a single-page arcade cabinet experience with 5 screens navigabl
 - `showScreen(id)` — toggle active screens and nav buttons; increments score based on screen visited (PLAYER 1: 100, QUEST LOG: 250, CHAR STATS: 300, INVENTORY: 500, CREDITS: 150), no repeat scoring
 - `animateStatBars()` — re-trigger stat bar fill width on CHAR STATS activation
 - `loadJSON()` / `loadData()` — async XHR to fetch `data.json`
+- `loadProjects()` — build INVENTORY project cards from `data.projects` after the featured donut (which stays hard-coded in `index.html`); `docs/prompts/project-summary.md` is the prompt for gathering a new project's card info
 - `loadExperience()` — build experience cards DOM from data; first card labeled "CURRENT QUEST" in neon yellow with yellow left border, others labeled "▶ QUEST" in dim text
 - Nav buttons wired via `initNav()` event listeners
 - Score display shows in-game hi-score at top of screen
@@ -67,6 +68,14 @@ The root site is a single-page arcade cabinet experience with 5 screens navigabl
     "companyLink": "https://...",
     "from": "YYYY-MM-DD",
     "to": "YYYY-MM-DD"   // empty string = Present
+  }],
+  "projects": [{          // INVENTORY cards, shown in array order
+    "tag": "SIDE PROJECT",
+    "name": "",
+    "description": "",    // one line, ≤ 50 chars
+    "features": ["", "", ""],  // 3 items, ≤ 24 chars each
+    "liveUrl": "https://...",  // empty = name not linked
+    "repoUrl": "https://..."   // empty = no [ GITHUB ] link (use for private repos)
   }]
 }
 ```

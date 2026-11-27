@@ -114,7 +114,7 @@
       <!-- SCREEN: INVENTORY (Projects + 3D Donut) -->
       <div class="screen" id="screen-inventory" role="region" aria-label="Inventory">
         <h2 class="screen-heading">&#x25A0; INVENTORY</h2>
-        <div class="screen-scroll-area inventory-grid">
+        <div class="screen-scroll-area inventory-grid" id="inventory-grid">
 
           <!-- Featured: 3D Donut -->
           <article class="item-slot item-slot--featured">
@@ -135,46 +135,7 @@
             <p class="item-desc">Handcrafted in Blender. Learned from Blender Guru.</p>
           </article>
 
-          <!-- Project: Budget -->
-          <article class="item-slot">
-            <p class="item-tag">SIDE PROJECT</p>
-            <p class="item-name">
-              <a target="_blank" rel="noopener noreferrer" href="https://budget-fung-public.web.app">BUDGET &#x25BA;</a>
-            </p>
-            <p class="item-desc">Save your expenses for better</p>
-            <ul class="item-features">
-              <li>&#x25AA; Ionic React (PWA)</li>
-              <li>&#x25AA; Record expenses</li>
-              <li>&#x25AA; Current month view</li>
-            </ul>
-            <a class="item-link" target="_blank" rel="noopener noreferrer" href="https://github.com/FungusGaming">
-              [ GITHUB ]
-            </a>
-          </article>
-
-          <!-- Project: Service Provider -->
-          <article class="item-slot">
-            <p class="item-tag">FINAL YEAR PROJECT</p>
-            <p class="item-name">SERVICE PROVIDER</p>
-            <p class="item-desc">Find the best service around you</p>
-            <ul class="item-features">
-              <li>&#x25AA; Google Maps API</li>
-              <li>&#x25AA; Geo-location search</li>
-              <li>&#x25AA; Rating system</li>
-            </ul>
-          </article>
-
-          <!-- Project: iRead -->
-          <article class="item-slot">
-            <p class="item-tag">UNIVERSITY WORKSHOP</p>
-            <p class="item-name">iREAD</p>
-            <p class="item-desc">Library system with fingerprint recognition</p>
-            <ul class="item-features">
-              <li>&#x25AA; Fingerprint auth</li>
-              <li>&#x25AA; Enhanced borrow service</li>
-              <li>&#x25AA; Bootstrap UI</li>
-            </ul>
-          </article>
+          <!-- Project cards are built by loadProjects() in main.js from data/data.json -->
 
         </div>
       </div>
