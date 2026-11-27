@@ -10,13 +10,42 @@ const SCREEN_POINTS = {
   'screen-credits':   150,
 };
 
-let score = 0;
+const SCORE_STORAGE_KEY = 'fungus-scored-screens';
+
+// Screens that have already awarded points. Saved so each screen scores
+// only once, even across reloads.
+const scoredScreens = new Set(readScoredScreens());
 let currentScreen = 'screen-title';
 
-function addScore(screenId) {
-  score += SCREEN_POINTS[screenId] || 100;
+function readScoredScreens() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(SCORE_STORAGE_KEY));
+    return Array.isArray(saved) ? saved.filter((id) => id in SCREEN_POINTS) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveScoredScreens() {
+  try {
+    localStorage.setItem(SCORE_STORAGE_KEY, JSON.stringify([...scoredScreens]));
+  } catch (e) {
+    // Storage unavailable (private mode, blocked): score still works for this visit.
+  }
+}
+
+function renderScore() {
+  let score = 0;
+  scoredScreens.forEach((id) => { score += SCREEN_POINTS[id]; });
   const el = document.getElementById('hi-score');
   if (el) el.textContent = String(score).padStart(5, '0');
+}
+
+function addScore(screenId) {
+  if (!(screenId in SCREEN_POINTS) || scoredScreens.has(screenId)) return;
+  scoredScreens.add(screenId);
+  saveScoredScreens();
+  renderScore();
 }
 
 // ---- Screen Navigation ----
@@ -187,5 +216,6 @@ function timeSince(dateFrom, dateTo) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  renderScore();
   loadData();
 });
