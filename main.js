@@ -2,21 +2,95 @@ let data;
 
 // ---- Score ----
 
+// PLAYER 1 (screen-title) is left out: it's the landing page, so it's
+// already been seen and doesn't score.
 const SCREEN_POINTS = {
-  'screen-title':     100,
   'screen-quest':     250,
   'screen-stats':     300,
   'screen-inventory': 500,
   'screen-credits':   150,
 };
 
-let score = 0;
+const SCORE_STORAGE_KEY = 'fungus-scored-screens';
+
+// Screens that have already awarded points. Saved so each screen scores
+// only once, even across reloads.
+const scoredScreens = new Set(readScoredScreens());
 let currentScreen = 'screen-title';
 
-function addScore(screenId) {
-  score += SCREEN_POINTS[screenId] || 100;
+function readScoredScreens() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(SCORE_STORAGE_KEY));
+    return Array.isArray(saved) ? saved.filter((id) => id in SCREEN_POINTS) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveScoredScreens() {
+  try {
+    localStorage.setItem(SCORE_STORAGE_KEY, JSON.stringify([...scoredScreens]));
+  } catch (e) {
+    // Storage unavailable (private mode, blocked): score still works for this visit.
+  }
+}
+
+function renderScore() {
+  let score = 0;
+  scoredScreens.forEach((id) => { score += SCREEN_POINTS[id]; });
   const el = document.getElementById('hi-score');
   if (el) el.textContent = String(score).padStart(5, '0');
+}
+
+function addScore(screenId) {
+  if (!(screenId in SCREEN_POINTS) || scoredScreens.has(screenId)) return;
+  scoredScreens.add(screenId);
+  saveScoredScreens();
+  renderScore();
+  showScorePop(SCREEN_POINTS[screenId]);
+}
+
+// Hidden reset: click the FUNGUS.EXE logo 3 times quickly to clear the score
+// so every screen can score again.
+const RESET_CLICKS = 3;
+const RESET_CLICK_GAP_MS = 500;
+
+function resetScore() {
+  scoredScreens.clear();
+  try {
+    localStorage.removeItem(SCORE_STORAGE_KEY);
+  } catch (e) {
+    // Storage unavailable: the in-memory score is still cleared.
+  }
+  renderScore();
+}
+
+function initScoreReset() {
+  const logo = document.querySelector('.nav-logo');
+  if (!logo) return;
+  let clicks = 0;
+  let lastClick = 0;
+  logo.addEventListener('click', () => {
+    const now = Date.now();
+    clicks = now - lastClick <= RESET_CLICK_GAP_MS ? clicks + 1 : 1;
+    lastClick = now;
+    if (clicks === RESET_CLICKS) {
+      clicks = 0;
+      resetScore();
+    }
+  });
+}
+
+// Floats a "+points" label under the hi-score that rises and fades out.
+function showScorePop(points) {
+  const scoreBox = document.querySelector('.nav-score');
+  if (!scoreBox) return;
+  const pop = document.createElement('span');
+  pop.className = 'score-pop';
+  pop.setAttribute('aria-hidden', 'true');
+  pop.textContent = '+' + points;
+  pop.addEventListener('animationend', () => pop.remove());
+  scoreBox.appendChild(pop);
 }
 
 // ---- Screen Navigation ----
@@ -148,10 +222,71 @@ const loadExperience = () => {
   });
 };
 
+const createExternalLink = (className, href, text) => {
+  const link = document.createElement('a');
+  link.className = className;
+  link.href = href;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = text;
+  return link;
+};
+
+// Builds the INVENTORY project cards. The featured donut card stays in index.html.
+const loadProjects = () => {
+  if (!data || !Array.isArray(data.projects)) return;
+
+  const grid = document.getElementById('inventory-grid');
+  if (!grid) return;
+  grid.querySelectorAll('.item-slot--project').forEach((card) => card.remove());
+
+  data.projects.forEach((project) => {
+    const card = document.createElement('article');
+    card.className = 'item-slot item-slot--project';
+
+    const tag = document.createElement('p');
+    tag.className = 'item-tag';
+    tag.textContent = project.tag;
+    card.appendChild(tag);
+
+    const name = document.createElement('p');
+    name.className = 'item-name';
+    if (project.liveUrl) {
+      name.appendChild(createExternalLink('', project.liveUrl, project.name + ' ►'));
+    } else {
+      name.textContent = project.name;
+    }
+    card.appendChild(name);
+
+    const desc = document.createElement('p');
+    desc.className = 'item-desc';
+    desc.textContent = project.description;
+    card.appendChild(desc);
+
+    if (Array.isArray(project.features) && project.features.length) {
+      const list = document.createElement('ul');
+      list.className = 'item-features';
+      project.features.forEach((feature) => {
+        const li = document.createElement('li');
+        li.textContent = '▪ ' + feature;
+        list.appendChild(li);
+      });
+      card.appendChild(list);
+    }
+
+    if (project.repoUrl) {
+      card.appendChild(createExternalLink('item-link', project.repoUrl, '[ GITHUB ]'));
+    }
+
+    grid.appendChild(card);
+  });
+};
+
 const loadData = async () => {
   try {
     data = await loadJSON('data/data.json');
     loadExperience();
+    loadProjects();
   } catch (e) {
     console.error('Failed to load data:', e);
     data = {
@@ -187,5 +322,7 @@ function timeSince(dateFrom, dateTo) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  initScoreReset();
+  renderScore();
   loadData();
 });
